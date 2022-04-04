@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Routes } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,9 +11,18 @@ function App() {
   }, []);
 
   return (
+
     <div className="App">
-      <h1>Page Count: {count}</h1>
-    </div>
+
+   
+    <Routes>
+    
+        {/* <Route path="/url" element={<Component prop={prop} />}/> */}
+
+    </Routes>
+    
+  </div>
+    
   );
 }
 
