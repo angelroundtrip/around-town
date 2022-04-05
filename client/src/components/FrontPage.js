@@ -1,9 +1,10 @@
 import React from 'react'
+import background from "../images/seoul.jpg";
 
 function FrontPage({apiGet}) {
 
   return (
-    <div>
+    <div style={{ backgroundImage: `url(${background})`}}>
 
     <h1>HELLO</h1>
 
