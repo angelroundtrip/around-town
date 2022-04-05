@@ -71,16 +71,6 @@ function Signup() {
       onChange={(e) => setEmail(e.target.value)}
     />
 
-    {/* <p></p>
-    <label htmlFor="password_confirmation">Confirm Password:</label>
-    <input
-    style={{ marginLeft:'20px'}}
-    type="password"
-    id="password_confirmation"
-    value={passwordConfirmation}
-    onChange={(e) => setPasswordConfirmation(e.target.value)}
-    /> */}
-
     <p></p>
     <label htmlFor="first_name">First Name:</label>
     <input
@@ -103,9 +93,6 @@ function Signup() {
     
     <p></p>
     <button type="submit">Signup</button>
-
-    {/* <p></p>
-    <button><a style={{textDecoration: 'none'}}href='/' type="submit">  </a> </button> */}
 
     </form>
     {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null}
