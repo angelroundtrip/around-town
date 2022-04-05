@@ -2,6 +2,8 @@ import React, { useState, useEffect, useNavigate } from 'react'
 
 function Signup() {
 
+  // * Need to set REGEX to ensure valid email address
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
