@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([])
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,8 +22,8 @@ function Login() {
     .then(user => {
         console.log(user)
         if (!user.errors)  { 
-          alert("Login successful")
-          // navigate(`/posts`)
+          // alert("Login successful")
+          navigate(`/home`)
         } else {
         setErrors(Object.entries(user.errors))
         alert("Incorrect login")
@@ -47,7 +47,7 @@ function Login() {
         />
 
       <p></p>
-        <label  htmlFor="password">Password:</label>
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
           id="password"
@@ -56,7 +56,7 @@ function Login() {
           />
 
       <p></p>
-        <button  type="submit">Login</button>
+        <button type="submit">Login</button>
        
       </form>
       

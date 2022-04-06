@@ -1,7 +1,9 @@
 // import '../App.css';
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { Header } from "semantic-ui-react";
 import FrontPage from "./FrontPage";
+import Homepage from "./Homepage";
 import Signup from "./Signup";
 
 
@@ -16,7 +18,7 @@ function App() {
       .then(res => res.json())
       .then(data => setUser(data))
   }, [])
-
+  
       // * You should get your API key at https://opentripmap.io
       function apiGet(method, query) {
         return new Promise(function(resolve, reject) {
@@ -36,11 +38,23 @@ function App() {
             });
         });
       }
+
+      const handleDeleteAccount = () => {
+        fetch(`http://localhost:4000/users/${user.id}`,{
+          method:"DELETE",
+        })
+        setUser(null);
+        alert("User deleted successfully")
+      }
       
   return (
     <div className="App">
    
     <Routes>
+
+      <Route path="/home" element={<Homepage  />}/>
+
+      <Route element={<Header setUser={setUser} />}/>
 
       <Route path="/signup" element={<Signup />}/>
     
