@@ -1,18 +1,29 @@
 import React from 'react'
-import background from "../images/seoul.jpg";
+import seoul from "../images/seoul.jpg";
+import Login from './Login';
+import Signup from './Signup';
+
 
 function FrontPage({apiGet}) {
 
   return (
-    <div style={{ backgroundImage: `url(${background})`}}>
+    
+  <menu >
 
-    <h1>HELLO</h1>
+    <h1>Around Town</h1>
 
-    <button onClick={apiGet}>FETCH</button>
+    {/* <button onClick={apiGet}>FETCH</button> */}
 
+
+    {/* NOTE: signup route and component do the same thing, the difference is that one redirects. Can use a ternary and incorporate the signup component to appear on the front page */}
     <a href='signup'>Create account</a>
+    <Signup />
 
-  </div>
+    <Login />
+
+    {/* <img src={seoul} alt='background' /> */}
+
+  </menu>
    
   )
 }
