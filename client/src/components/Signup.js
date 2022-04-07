@@ -9,9 +9,8 @@ function Signup() {
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const [homeLocation, setHomeLocation] = useState('')
   const [errors, setErrors] = useState([])
-  // const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const handleUsername = (e) => setUsername(e.target.value)
   const handlePassword = (e) => setPassword(e.target.value)
   const navigate = useNavigate();
@@ -23,8 +22,7 @@ function Signup() {
         password: password,
         email: email,
         first_name: firstName,
-        last_name: lastName,
-        // password_confirmation: passwordConfirmation,
+        home_location: homeLocation,
       }
       console.log(newUser)
      
@@ -85,13 +83,13 @@ function Signup() {
     />
 
     <p></p>
-    <label htmlFor="last_name">Last Name:</label>
+    <label htmlFor="home_location">Home Location:</label>
     <input
       style={{ marginLeft:'20px'}}
       type="text"
-      id="last_name"
-      value={lastName}
-      onChange={(e) => setLastName(e.target.value)}
+      id="home_location"
+      value={homeLocation}
+      onChange={(e) => setHomeLocation(e.target.value)}
     />
     
     <p></p>
