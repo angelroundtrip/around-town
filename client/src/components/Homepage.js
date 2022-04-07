@@ -2,8 +2,6 @@ import React from 'react'
 
 function Homepage() {
 
-console.log()
-
   return (
     <div>
       

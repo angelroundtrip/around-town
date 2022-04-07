@@ -4,15 +4,24 @@ import Header from './Header';
 import Login from './Login';
 import Signup from './Signup';
 
-const randomize = Math.floor(Math.random() * 1000000)
+// const randomize = Math.floor(Math.random() * 1000000)
+// const WEATHER_API_KEY = process.env.REACT_APP_API_KEY
 
-function FrontPage({apiGet}) {
+console.log(process.env.REACT_APP_WEATHER_API_KEY)
+// * Moving on for now, but come back and hide api key...
+const API = 'apikey'
 
-  const randomizeAPIdata = () => {
-    fetch(`http://api.opentripmap.com/0.1/en/places/xid/${randomize}?apikey=5ae2e3f221c38a28845f05b6d90c8f1c3fe736f84545796a46dd19e6`)
+function FrontPage() {
+
+ 
+
+  const favCityWeather = () => {
+    fetch(`http://api.weatherapi.com/v1/current.json?key=${API}&q=NYC&aqi=no`)
       .then(res => res.json())
-      .then(data => console.log(data))
+      // .then(data => console.log(data))
+      .then(data => console.log(data.current.temp_f))
   }
+  
 
   return (
     // * NOTE: signup route and component do the same thing, the difference is that one redirects. Can use a ternary and incorporate the signup component to appear on the front page 
@@ -31,7 +40,7 @@ function FrontPage({apiGet}) {
 
     {/* <img src={seoul} alt='background' /> */}
 
-    <button onClick={randomizeAPIdata}>TEST API</button>
+    <button onClick={favCityWeather}>TEST API</button>
 
   </menu>
    
