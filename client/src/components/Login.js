@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Header from './Header'
 // import { useNavigate } from 'react-router-dom';
 
 function Login({setUser}) {
@@ -23,7 +24,7 @@ function Login({setUser}) {
     .then(user => {
         console.log(user)
         if (!user.errors)  { 
-          alert("Login successful, click on view posts!")
+          alert("Login successful")
           // navigate(`/posts`)
         } else {
         setError(Object.entries(user.errors))

@@ -12,27 +12,31 @@ function App() {
   const [user, setUser] = useState(null)
   console.log(user)
   
-  useEffect(() => {
-    fetch('/users')
-    .then(res => res.json())
-    .then(data => setUser(data))
-  }, [])
+  useEffect(()=>{
+    fetch('/me')
+      .then(r => {
+        if(r.ok){
+          r.json().then(data=>setUser(data))
+        }
+      })
+  },[])
+ 
   
   // * Will be used in the profile page
-  // const handleDeleteAccount = () => {
-  //   fetch(`http://localhost:4000/users/${user.id}`,{
-  //     method:"DELETE",
-  //   })
-  //   setUser(null);
-  //   alert("User deleted successfully")
-  // }
+  const handleDeleteAccount = () => {
+    fetch(`http://localhost:4000/users/${user.id}`,{
+      method:"DELETE",
+    })
+    setUser(null);
+    alert("User deleted")
+  }
       
   return (
     <div className="App">
    
     <Routes>
 
-      <Route path="/home" element={<Homepage user={user} setUser={setUser} />}/>
+      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount}/>}/>
 
       {/* <Route path="/signup" element={<Signup />}/> */}
     

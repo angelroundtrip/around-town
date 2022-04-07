@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
-
   skip_before_action :authorize, only: [:create]
 
   # GET /users
   def index
     @users = User.all
-
     render json: @users
   end
 
@@ -16,14 +14,13 @@ class UsersController < ApplicationController
   end
 
   def update 
-
     user = User.find(params[:id])
     user.update!(update_params)
     render json: user, status: :ok
-end
+  end
 
   def show
-      render json: @current_user
+    render json: @current_user
   end
 
   def destroy 
