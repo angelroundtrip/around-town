@@ -6,14 +6,18 @@ import Signup from './Signup';
 // const randomize = Math.floor(Math.random() * 1000000)
 // const WEATHER_API_KEY = process.env.REACT_APP_API_KEY
 
-console.log(process.env.REACT_APP_WEATHER_API_KEY)
+// console.log(process.env.REACT_APP_WEATHER_API_KEY)
 // * Moving on for now, but come back and hide api key...
 const API = 'apikey'
 
-function FrontPage() {
+function FrontPage({user}) {
+  
+  const userLocation = user
+  // console.log(userLocation)
 
   const favCityWeather = () => {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${API}&q=NYC&aqi=no`)
+
+    fetch(`http://api.weatherapi.com/v1/current.json?key=${API}&q=${userLocation}&aqi=no`)
       .then(res => res.json())
       // .then(data => console.log(data))
       .then(data => console.log(data.current.temp_f))

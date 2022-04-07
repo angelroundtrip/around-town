@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function Login() {
   
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([])
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,12 +23,12 @@ function Login() {
         console.log(user)
         if (!user.errors)  { 
           // alert("Login successful")
-          navigate(`/home`)
         } else {
-        setErrors(Object.entries(user.errors))
-        alert("Incorrect login")
-      }
-    })  
+          setErrors(Object.entries(user.errors))
+          alert("Incorrect login")
+        }
+      })  
+      // navigate(`/home`)
   }
   
   return (

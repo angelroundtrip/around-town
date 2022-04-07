@@ -1,7 +1,7 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
-function Header({user}) {
+function Header({user, setUser}) {
 
   const navigate = useNavigate();
 
@@ -9,14 +9,16 @@ function Header({user}) {
     fetch('/logout',{
         method:'DELETE'
     })
-    navigate('/')
-  }
-  
-
-  const currentUser = user
+    .then(()=>{
+      setUser(null)
+      navigate('/')
+  })
+}
+   
+  // const currentUser = user
   
   console.log(user)
-  console.log(currentUser)
+  // console.log(currentUser)
 
   return (
     <header>

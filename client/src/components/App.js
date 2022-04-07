@@ -32,11 +32,11 @@ function App() {
    
     <Routes>
 
-      <Route path="/home" element={<Homepage user={user} />}/>
+      <Route path="/home" element={<Homepage user={user} setUser={setUser} />}/>
 
       {/* <Route path="/signup" element={<Signup />}/> */}
     
-      <Route path="/" element={<FrontPage />}/>
+      <Route path="/" element={<FrontPage user={user} />}/>
 
     </Routes>
     
