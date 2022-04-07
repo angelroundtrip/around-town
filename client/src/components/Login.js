@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 // import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({setUser}) {
+  // *Login works, but all users get logged in...
   
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([])
+  const [error, setError] = useState([])
   // const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -16,24 +17,24 @@ function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password}),
+      body: JSON.stringify({ username, password }),
     })
     .then(res => res.json())
     .then(user => {
         console.log(user)
         if (!user.errors)  { 
-          // alert("Login successful")
+          alert("Login successful, click on view posts!")
+          // navigate(`/posts`)
         } else {
-          setErrors(Object.entries(user.errors))
-          alert("Incorrect login")
-        }
-      })  
-      // navigate(`/home`)
+        setError(Object.entries(user.errors))
+        alert("Incorrect login")
+      }
+    })  
   }
   
   return (
     
-    <div  >
+    <div>
       
       <form onSubmit={handleSubmit}>
 
@@ -57,9 +58,10 @@ function Login() {
 
       <p></p>
         <button type="submit">Login</button>
-       
-      </form>
       
+      </form>
+      {error?<div>{error}</div>:null}
+     
     </div>
   );
 }

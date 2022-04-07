@@ -36,7 +36,7 @@ function App() {
 
       {/* <Route path="/signup" element={<Signup />}/> */}
     
-      <Route path="/" element={<FrontPage user={user} />}/>
+      <Route path="/" element={<FrontPage user={user} setUser={setUser}/>}/>
 
     </Routes>
     

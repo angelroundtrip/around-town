@@ -10,7 +10,7 @@ import Signup from './Signup';
 // * Moving on for now, but come back and hide api key...
 const API = 'apikey'
 
-function FrontPage({user}) {
+function FrontPage({user, setUser}) {
   
   const userLocation = user
   // console.log(userLocation)
@@ -36,7 +36,7 @@ function FrontPage({user}) {
     <a href='signup'>Create account</a>
     <Signup />
 
-    <Login />
+    <Login setUser={setUser} />
     {/* <Header/> */}
 
     {/* <img src={seoul} alt='background' /> */}

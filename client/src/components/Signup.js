@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function Signup() {
 
@@ -13,7 +13,7 @@ function Signup() {
   const [errors, setErrors] = useState([])
   const handleUsername = (e) => setUsername(e.target.value)
   const handlePassword = (e) => setPassword(e.target.value)
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   function onSubmit(e){
       e.preventDefault()
@@ -36,7 +36,7 @@ function Signup() {
           console.log(user)
           if (!user.errors)  { 
             // alert("Signup successful!")
-            navigate(`/home`)
+            // navigate(`/home`)
           } else {
           setErrors(Object.entries(user.errors))
         }
