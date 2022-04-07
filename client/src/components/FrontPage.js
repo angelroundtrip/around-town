@@ -1,6 +1,5 @@
 import React from 'react'
 import seoul from "../images/seoul.jpg";
-import Header from './Header';
 import Login from './Login';
 import Signup from './Signup';
 
@@ -12,8 +11,6 @@ console.log(process.env.REACT_APP_WEATHER_API_KEY)
 const API = 'apikey'
 
 function FrontPage() {
-
- 
 
   const favCityWeather = () => {
     fetch(`http://api.weatherapi.com/v1/current.json?key=${API}&q=NYC&aqi=no`)
@@ -40,7 +37,7 @@ function FrontPage() {
 
     {/* <img src={seoul} alt='background' /> */}
 
-    <button onClick={favCityWeather}>TEST API</button>
+    {/* <button onClick={favCityWeather}>TEST API</button> */}
 
   </menu>
    
