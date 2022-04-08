@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import FrontPage from "./FrontPage";
 import Homepage from "./Homepage";
+import PostForm from "./PostForm";
 // import Signup from "./Signup";
 
 
@@ -37,6 +38,8 @@ function App() {
       <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} />}/>
 
       {/* <Route path="/signup" element={<Signup />}/> */}
+
+      <Route path="/post" element={<PostForm user={user} />} />
     
       <Route path="/" element={<FrontPage user={user} setUser={setUser}/>}/>
 

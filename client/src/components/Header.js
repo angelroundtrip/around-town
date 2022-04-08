@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import UserAccountUpdate from './UserAccountUpdate';
 // import ENV from './config/locales/application.yml'
 // import { useNavigate } from "react-router-dom";
 
@@ -50,13 +51,16 @@ function Header({user, setUser, handleDeleteAccount}) {
       <h2> {user ? user.username : <a href='/' style={{textDecoration: 'none'}}> Login </a>}</h2>
       <span></span>
        {/* Other useful data is available, would like to include weather icon eventually */}
-      <h5> {user ? user.home_location : null} | {weatherData.current && weatherData.current.temp_f}°F {weatherData.condition && weatherData.condition.icon} {weatherData.current && weatherData.current.condition && weatherData.current.condition.text}</h5>
+      <h5> {user ? user.home_location : null} | {weatherData.current && weatherData.current.temp_f} °F {weatherData.condition && weatherData.condition.icon} {weatherData.current && weatherData.current.condition && weatherData.current.condition.text}</h5>
       <span></span>
       {/* <h3>{user ? user.home_location : null}</h3> */}
      
       <button onClick={handleLogout}>Logout</button>
    
       <button onClick={handleDeleteAccount}>Delete Account</button>
+
+      {/* <button onClick={handleUpdateAccount}>Update Account</button> */}
+      <UserAccountUpdate user={user} setUser={setUser}/>
       <hr></hr>
 
     </div>

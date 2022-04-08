@@ -1,5 +1,6 @@
 import React from 'react'
 import PostCard from './PostCard'
+import PostForm from './PostForm'
 
 function PostContainer({user}) {
   return (
@@ -16,6 +17,8 @@ function PostContainer({user}) {
       <p>{user ? `Hello, ${user.username}!`: null}</p>
 
       <PostCard />
+
+      <PostForm />
       
     </menu>
   )

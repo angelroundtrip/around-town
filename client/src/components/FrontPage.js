@@ -3,6 +3,7 @@ import seoul from "../images/seoul.jpg";
 import Login from './Login';
 import Signup from './Signup';
 
+
 function FrontPage({user, setUser}) {
 
 
