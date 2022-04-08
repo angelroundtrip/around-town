@@ -7,26 +7,26 @@ function FrontPage({user, setUser}) {
 
 
   return (
-    // * NOTE: signup route and component do the same thing, the difference is that one redirects. Can use a ternary and incorporate the signup component to appear on the front page 
 
-  <menu >
+    <header>
 
-    <h1>Around Town</h1>
+      <h1>Around Town</h1>
+      <hr></hr>
 
-    {/* <button onClick={apiGet}>FETCH</button> */}
+      <h3>LOGIN</h3>
+      <Login setUser={setUser} />
+      {/* <button onClick={apiGet}>FETCH</button> */}
 
-    <a href='signup'>Create account</a>
-    <Signup />
+      {/* <a href='signup'>Create account</a> */}
+      <h3>Create an account</h3>
+      <Signup />
 
-    <Login setUser={setUser} />
-    {/* <Header/> */}
+      {/* <img src={seoul} alt='background'/> */}
 
-    {/* <img src={seoul} alt='background' /> */}
+      <a style={{textDecoration: 'none'}}href='home'> <button>TEMPORARY HOME PAGE BUTTON</button> </a>
 
-    {/* <button onClick={favCityWeather}>TEST API</button> */}
-
-  </menu>
-   
+    </header>
+    
   )
 }
 

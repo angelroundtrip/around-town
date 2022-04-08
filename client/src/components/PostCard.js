@@ -1,8 +1,12 @@
 import React from 'react'
+import { Card, Icon } from 'semantic-ui-react'
 
 function PostCard() {
+
   return (
-    <div>PostCard</div>
+    <div>
+      <Card>PostCard</Card>
+    </div>
   )
 }
 

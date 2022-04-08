@@ -1,7 +1,7 @@
 import React from 'react'
 import PostCard from './PostCard'
 
-function PostContainer() {
+function PostContainer({user}) {
   return (
     <menu>
       
@@ -13,7 +13,9 @@ function PostContainer() {
 
       <p>Seoul has soul</p>
 
-      {/* <PostCard /> */}
+      <p>{user ? `Hello, ${user.username}!`: null}</p>
+
+      <PostCard />
       
     </menu>
   )

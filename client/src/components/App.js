@@ -8,7 +8,7 @@ import Homepage from "./Homepage";
 
 function App() {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState('')
   console.log(user)
   
   useEffect(()=>{

@@ -47,7 +47,7 @@ function Signup() {
     // *Signup Form
 
     <div > 
-      <a href='/'>SIGNUP PAGE</a>
+      {/* <a href='/'>SIGNUP PAGE</a> */}
 
     <p></p>
     <form onSubmit={onSubmit}>

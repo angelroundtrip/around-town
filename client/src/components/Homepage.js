@@ -4,7 +4,7 @@ import Login from './Login';
 import PostContainer from './PostContainer';
 
 function Homepage({user, setUser, handleDeleteAccount, weatherData}) {
-  console.log(user)
+  // console.log(user)
 
   return (
     <div>
@@ -12,7 +12,7 @@ function Homepage({user, setUser, handleDeleteAccount, weatherData}) {
 
       <h1>Homepage</h1>
 
-      <PostContainer />
+      <PostContainer user={user}/>
 
       {/* <Login /> */}
 
