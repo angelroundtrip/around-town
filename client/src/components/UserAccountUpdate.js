@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+// * UPDATE WORKS, BUT GIVES ERRORS WHEN AT LEAST ONE FIELD IS NOT UPDATED OR IF EMAIL IS NOT UNIQUE
+
 function UserAccountUpdate({user, setUser}) {
 
   console.log(user)
@@ -20,16 +22,16 @@ function UserAccountUpdate({user, setUser}) {
           password: updatePassword,
           email: updateEmail,
           first_name: updateFirstName,
-          // home_location: updateHomeLocation,
+          home_location: updateHomeLocation,
       }
-      setUser({...user, updateUsername, updatePassword, updateEmail})
+      setUser({...user, updateUsername, updatePassword, updateEmail, updateFirstName, updateHomeLocation})
 
       // refresh form inputs on change
       setUpdateUsername("")
       setUpdatePassword("")
       setUpdateEmail("")
-      // setUpdateFirstName("")
-      // setUpdateHomeLocation("")
+      setUpdateFirstName("")
+      setUpdateHomeLocation("")
 
       fetch(`http://localhost:4000/users/${user.id}`, {
       method: "PATCH",
@@ -92,15 +94,15 @@ function UserAccountUpdate({user, setUser}) {
 
         <p></p>
 
-        {/* <label >
+        <label >
           First Name:
         <input type="text" value={updateFirstName} onChange={handleFirstNameChange} />
-        </label> */}
+        </label> 
 
-        {/* <label >
+        <label >
           Home Location:
         <input type="text" value={updateHomeLocation} onChange={handleHomeLocationChange} />
-        </label>   */}
+        </label> 
     
         <p></p>
 
