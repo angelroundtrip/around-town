@@ -1,7 +1,6 @@
 // import '../App.css';
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-// import Header from "./Header";
 import FrontPage from "./FrontPage";
 import Homepage from "./Homepage";
 // import Signup from "./Signup";
@@ -21,7 +20,6 @@ function App() {
       })
   },[])
  
-  
   // * Will be used in the profile page
   const handleDeleteAccount = () => {
     fetch(`http://localhost:4000/users/${user.id}`,{
@@ -33,10 +31,10 @@ function App() {
       
   return (
     <div className="App">
-   
+
     <Routes>
 
-      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount}/>}/>
+      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} />}/>
 
       {/* <Route path="/signup" element={<Signup />}/> */}
     
