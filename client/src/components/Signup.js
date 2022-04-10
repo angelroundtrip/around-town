@@ -35,7 +35,7 @@ function Signup() {
       .then(user => {
           console.log(user)
           if (!user.errors)  { 
-            // alert("Signup successful!")
+            alert("Signup successful")
             // navigate(`/home`)
           } else {
           setErrors(Object.entries(user.errors))
