@@ -1,51 +1,34 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: %i[ show update destroy ]
-
-  # GET /locations
   def index
-    @locations = Location.all
-
-    render json: @locations
+    render json: Location.all
   end
 
-  # GET /locations/1
   def show
-    render json: @location
+    location = Location.find(params[:id])
+    render json: location, status: :ok
   end
 
-  # POST /locations
+  def update 
+    location = Location.find(params[:id])
+    location.update!(Location_params)
+    render json: location, status: :ok
+  end
+
   def create
-    @location = Location.new(location_params)
-
-    if @location.save
-      render json: @location, status: :created, location: @location
-    else
-      render json: @location.errors, status: :unprocessable_entity
-    end
+    location = Location.create!(location_params)
+    location.user_id = @current_user.id
+    render json: location, status: :created
   end
 
-  # PATCH/PUT /locations/1
-  def update
-    if @location.update(location_params)
-      render json: @location
-    else
-      render json: @location.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /locations/1
-  def destroy
-    @location.destroy
+  def destroy 
+    location = Location.find(params[:id])
+    location.destroy
+    head :no_content
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_location
-      @location = Location.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def location_params
-      params.require(:location).permit(:name)
-    end
+  
+  def location_params
+    params.permit(:name)
+  end
 end

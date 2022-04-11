@@ -11,6 +11,7 @@ function Signup() {
   const [firstName, setFirstName] = useState('')
   const [homeLocation, setHomeLocation] = useState('')
   const [errors, setErrors] = useState([])
+  
   const handleUsername = (e) => setUsername(e.target.value)
   const handlePassword = (e) => setPassword(e.target.value)
   // const navigate = useNavigate();
@@ -63,7 +64,7 @@ function Signup() {
     </label>
 
     <p></p>
-    <label htmlFor="pet_name">Email:</label>
+    <label htmlFor="email">Email:</label>
     <input
       style={{ marginLeft:'20px'}}
       type="text"

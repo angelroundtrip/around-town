@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PostForm from './PostForm';
 import UserAccountUpdate from './UserAccountUpdate';
 // import ENV from './config/locales/application.yml'
 // import { useNavigate } from "react-router-dom";
@@ -43,9 +44,10 @@ function Header({user, setUser, handleDeleteAccount}) {
   }
   // console.log(user)
 
-
+  
+  
   return (
-
+    
     <div>
       
       <h2> {user ? user.username : <a href='/' style={{textDecoration: 'none'}}> Login </a>}</h2>
@@ -61,6 +63,9 @@ function Header({user, setUser, handleDeleteAccount}) {
 
       {/* <button onClick={handleUpdateAccount}>Update Account</button> */}
       <UserAccountUpdate user={user} setUser={setUser}/>
+
+      <PostForm user={user} userLocation={userLocation}/>
+
       <hr></hr>
 
     </div>

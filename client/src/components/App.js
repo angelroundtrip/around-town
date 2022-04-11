@@ -39,7 +39,7 @@ function App() {
 
       {/* <Route path="/signup" element={<Signup />}/> */}
 
-      <Route path="/post" element={<PostForm user={user} />} />
+      <Route path="/posts" element={<PostForm user={user} />} />
     
       <Route path="/" element={<FrontPage user={user} setUser={setUser}/>}/>
 
