@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     render json: @users
   end
 
+  def show
+    render json: @current_user
+  end
+  
   def create
       user = User.create!(user_params)
       session[:user_id] = user.id
@@ -19,9 +23,6 @@ class UsersController < ApplicationController
     render json: user, status: :ok
   end
 
-  def show
-    render json: @current_user
-  end
 
   def destroy 
     user = User.find(params[:id])

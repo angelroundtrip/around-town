@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Location from './Location';
 import PostForm from './PostForm';
 import UserAccountUpdate from './UserAccountUpdate';
 // import ENV from './config/locales/application.yml'
@@ -64,7 +65,8 @@ function Header({user, setUser, handleDeleteAccount}) {
       {/* <button onClick={handleUpdateAccount}>Update Account</button> */}
       <UserAccountUpdate user={user} setUser={setUser}/>
 
-      <PostForm user={user} userLocation={userLocation}/>
+      {/* <PostForm user={user} userLocation={userLocation}/> */}
+      <Location />
 
       <hr></hr>
 

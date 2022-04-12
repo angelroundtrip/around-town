@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+  skip_before_action :authorize, only: [:create]
+
   def index
     render json: Location.all
   end
@@ -16,7 +18,8 @@ class LocationsController < ApplicationController
 
   def create
     location = Location.create!(location_params)
-    location.user_id = @current_user.id
+    # location.user_id = @current_user.id
+    session[:location_id] = location.id
     render json: location, status: :created
   end
 

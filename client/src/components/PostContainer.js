@@ -2,7 +2,7 @@ import React from 'react'
 import PostCard from './PostCard'
 import PostForm from './PostForm'
 
-function PostContainer({user}) {
+function PostContainer({user, location}) {
   return (
     <menu>
       
@@ -14,11 +14,11 @@ function PostContainer({user}) {
 
       <p>Seoul has soul</p>
 
-      <p>{user ? `Hello, ${user.username}!`: null}</p>
+      <p>{user ? `Hello, ${user.username}! You're currently in ${user.home_location}!`: null}</p>
 
       <PostCard />
 
-      <PostForm />
+      <PostForm user={user} location={location}/>
       
     </menu>
   )

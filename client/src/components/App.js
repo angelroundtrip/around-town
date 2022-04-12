@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import FrontPage from "./FrontPage";
 import Homepage from "./Homepage";
+import Location from "./Location";
 import PostForm from "./PostForm";
 // import Signup from "./Signup";
 
@@ -17,6 +18,18 @@ function App() {
       .then(r => {
         if(r.ok){
           r.json().then(data=>setUser(data))
+        }
+      })
+  },[])
+
+  const [location, setLocation] = useState('Lima, Peru')
+  console.log(location)
+  
+  useEffect(()=>{
+    fetch('/me')
+      .then(r => {
+        if(r.ok){
+          r.json().then(data=>setLocation(data))
         }
       })
   },[])
@@ -35,11 +48,13 @@ function App() {
 
     <Routes>
 
-      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} />}/>
+      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} location={location}/>}/>
 
       {/* <Route path="/signup" element={<Signup />}/> */}
 
-      <Route path="/posts" element={<PostForm user={user} />} />
+      {/* <Route path="/posts" element={<PostForm user={user}  location={location} />} /> */}
+
+      {/* <Route path="/locations" element={<Location user={user}  />} /> */}
     
       <Route path="/" element={<FrontPage user={user} setUser={setUser}/>}/>
 

@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   def create
     post = Post.create!(post_params)
     # post.user_id = @current_user.id
+    # post.location_id = post.location
     render json: post, status: :created
   end
 
