@@ -5,6 +5,7 @@ import FrontPage from "./FrontPage";
 import Homepage from "./Homepage";
 import Location from "./Location";
 import PostForm from "./PostForm";
+import ProfilePage from "./ProfilePage";
 // import Signup from "./Signup";
 
 
@@ -95,6 +96,8 @@ function App() {
       {/* <Route path="/signup" element={<Signup />}/> */}
 
       <Route path="/posts" element={<PostForm user={user}  location={location} />} />
+
+      <Route path="/profile" element={<ProfilePage user={user} setUser={setUser} weatherData={weatherData} location={location} handleDeleteAccount={handleDeleteAccount}/>} />
 
       {/* <Route path="/locations" element={<Location user={user}  />} /> */}
     

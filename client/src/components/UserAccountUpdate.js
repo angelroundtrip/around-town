@@ -14,7 +14,6 @@ function UserAccountUpdate({user, setUser}) {
   const [error, setError] = useState([])
 
   function handleSubmitUpdateForm(e){
-
       e.preventDefault()
 
       const accountUpdate = {
@@ -71,7 +70,7 @@ function UserAccountUpdate({user, setUser}) {
       
     <div>
 
-      <span> UPDATE ACCOUNT </span>
+      <span style={{fontWeight: 'bold'}}> UPDATE ACCOUNT </span>
 
       {error?error.map(e => <div>{e}</div>):null}
 
@@ -84,7 +83,7 @@ function UserAccountUpdate({user, setUser}) {
 
         <label >
           Password:
-        <input type="text" value={updatePassword} onChange={handlePasswordChange} />
+        <input type="password" value={updatePassword} onChange={handlePasswordChange} />
         </label>
 
         <label>

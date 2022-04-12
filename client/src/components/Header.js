@@ -32,9 +32,13 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
   return (
     
     <div>
+      <h1>HEADER</h1>
       
       <h2> {user ? user.username : <a href='/' style={{textDecoration: 'none'}}> Login </a>}</h2>
       <span></span>
+
+      <a href='/profile' style={{textDecoration: 'none'}}>PROFILE PAGE</a>
+      
        {/* Other useful data is available, would like to include weather icon eventually */}
       <h5> {user ? user.home_location : null} | {weatherData.current && weatherData.current.temp_f} °F {weatherData.condition && weatherData.condition.icon} {weatherData.current && weatherData.current.condition && weatherData.current.condition.text}</h5>
       <span></span>
@@ -42,10 +46,10 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
      
       <button onClick={handleLogout}>Logout</button>
    
-      <button onClick={handleDeleteAccount}>Delete Account</button>
+      
 
       {/* <button onClick={handleUpdateAccount}>Update Account</button> */}
-      <UserAccountUpdate user={user} setUser={setUser}/>
+      {/* <UserAccountUpdate user={user} setUser={setUser}/> */}
 
       {/* <PostForm user={user} userLocation={userLocation}/> */}
       <Location />
