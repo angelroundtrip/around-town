@@ -22,7 +22,7 @@ function App() {
       })
   },[])
 
-  const [location, setLocation] = useState('Lima, Peru')
+  const [location, setLocation] = useState([])
   console.log(location)
   
   useEffect(()=>{
@@ -43,6 +43,29 @@ function App() {
     alert("User deleted")
   }
       
+  // * POSTS
+  // const [posts, setPosts] = useState([])
+
+  // const addNewPosts = newObj => {
+  //   fetch(`/posts`, {
+  //     method: 'POST', 
+  //     headers: {'Content-Type': 'application/json'},
+  //     body: JSON.stringify(newObj)
+  //   })
+  //   .then(r => r.json())
+  //   .then(data => {
+  //     setPosts([...posts, data])
+  //   })
+  // }
+
+  // useEffect(()=>{
+  //   fetch(`/posts`)
+  //   .then(r=>r.json())
+  //   .then(setPosts)
+  // }, [])
+
+  // console.log(posts)
+
   return (
     <div className="App">
 
@@ -52,7 +75,7 @@ function App() {
 
       {/* <Route path="/signup" element={<Signup />}/> */}
 
-      {/* <Route path="/posts" element={<PostForm user={user}  location={location} />} /> */}
+      <Route path="/posts" element={<PostForm user={user}  location={location} />} />
 
       {/* <Route path="/locations" element={<Location user={user}  />} /> */}
     

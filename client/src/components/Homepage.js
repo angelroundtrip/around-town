@@ -4,7 +4,7 @@ import Login from './Login';
 import PostContainer from './PostContainer';
 
 function Homepage({user, setUser, handleDeleteAccount, weatherData, location}) {
-  // console.log(user)
+  // console.log(location)
 
   return (
     <div>

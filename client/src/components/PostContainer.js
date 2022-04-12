@@ -3,6 +3,9 @@ import PostCard from './PostCard'
 import PostForm from './PostForm'
 
 function PostContainer({user, location}) {
+
+  // console.log(posts)
+
   return (
     <menu>
       
