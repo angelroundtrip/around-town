@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom';
 import Header from './Header'
-// import { useNavigate } from 'react-router-dom';
 
 function Login({setUser}) {
   // *Login works, but all users get logged in...
@@ -58,7 +58,9 @@ function Login({setUser}) {
           />
 
       <p></p>
+      {/* <NavLink to='/home'> */}
         <button type="submit">Login</button>
+      {/* </NavLink> */}
       
       </form>
       {error?<div>{error}</div>:null}

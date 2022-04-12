@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 import Location from './Location';
 import PostForm from './PostForm';
 import UserAccountUpdate from './UserAccountUpdate';
@@ -35,16 +36,18 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
       <h1>HEADER</h1>
       
       <h2> {user ? user.username : <a href='/' style={{textDecoration: 'none'}}> Login </a>}</h2>
-      <span></span>
 
-      <a href='/profile' style={{textDecoration: 'none'}}>PROFILE PAGE</a>
-      
+      <NavLink to='/'>
+      <button onClick={handleLogout}>Logout</button>
+      </NavLink>
+
+      <a href='/profile' style={{textDecoration: 'none', marginLeft:'20px'}}>PROFILE PAGE</a>
+     
        {/* Other useful data is available, would like to include weather icon eventually */}
       <h5> {user ? user.home_location : null} | {weatherData.current && weatherData.current.temp_f} °F {weatherData.condition && weatherData.condition.icon} {weatherData.current && weatherData.current.condition && weatherData.current.condition.text}</h5>
       <span></span>
       {/* <h3>{user ? user.home_location : null}</h3> */}
      
-      <button onClick={handleLogout}>Logout</button>
    
       
 

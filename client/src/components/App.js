@@ -70,7 +70,7 @@ function App() {
   // * WEATHER
   const userLocation = user ? user.home_location : null
   
-  const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key==${userLocation}&aqi=no`
+  const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key=&q=${userLocation}&aqi=no`
 
 
   const [weatherData, setWeatherData] = useState({});

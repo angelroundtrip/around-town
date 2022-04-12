@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import Header from './Header';
 import Login from './Login';
 import PostContainer from './PostContainer';
