@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import PostCard from './PostCard'
 
-function PostList({posts}) {
+function PostList({posts, user}) {
 
   // const [posts, setPosts] = useState([])
 
@@ -11,11 +11,12 @@ function PostList({posts}) {
   //   .then(json => setPosts(json))
   // }, [])
 
-  console.log(posts)
+  // console.log(user.posts)
+  // console.log(user.posts)
 
   return (
     <div>
-      {posts.map(postObj => <PostCard key={postObj.id} post={postObj}/>)}
+      {posts.map(postObj => <PostCard key={postObj.id} post={postObj} user={user}/>)}
     </div>
   )
 }

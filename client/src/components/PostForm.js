@@ -24,7 +24,7 @@ function PostForm({user, location}) {
     })
     .then(r => r.json())
     .then(data => {
-      setPosts([...posts, data])
+      setPosts([data, ...posts])
     })
   }
 
@@ -50,11 +50,11 @@ function PostForm({user, location}) {
     //   .then(r=>r.json())
     //   .then(console.log); 
   }
-
+  // * Renders all posts
   useEffect(()=>{
     fetch(`/posts`)
     .then(r=>r.json())
-    .then(json => setPosts(json))
+    .then(setPosts)
   }, [])
 
 
@@ -80,7 +80,7 @@ function PostForm({user, location}) {
      
       <button type="submit">Add Post</button>
 
-      <PostList posts={posts}/>
+      <PostList posts={posts} user={user}/>
 
       {/* <button onClick={handleDeletePost}>Delete Post</button> */}
       

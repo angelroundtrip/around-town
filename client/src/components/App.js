@@ -66,12 +66,31 @@ function App() {
 
   // console.log(posts)
 
+  // * WEATHER
+  const userLocation = user ? user.home_location : null
+  
+  const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key==${userLocation}&aqi=no`
+
+
+  const [weatherData, setWeatherData] = useState({});
+  
+  useEffect(() => {
+    getWeatherWithFetch();
+  }, [userLocation]);
+
+  const getWeatherWithFetch = async () => {
+    const response = await fetch(weatherAPIUrl);
+    const jsonData = await response.json();
+    setWeatherData(jsonData);
+  };
+  // console.log(weatherData.current && weatherData.current.condition && weatherData.current.condition.text)
+
   return (
     <div className="App">
 
     <Routes>
 
-      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} location={location}/>}/>
+      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} location={location} weatherData={weatherData}/>}/>
 
       {/* <Route path="/signup" element={<Signup />}/> */}
 

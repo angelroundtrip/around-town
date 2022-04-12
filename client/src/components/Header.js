@@ -13,25 +13,7 @@ import UserAccountUpdate from './UserAccountUpdate';
 // * Moving on for now, but come back and hide api key...
 // * API works, refresh changes to null
 
-function Header({user, setUser, handleDeleteAccount}) {
-  
-  const userLocation = user ? user.home_location : null
-  
-  const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key=&q=${userLocation}&aqi=no`
-
-
-  const [weatherData, setWeatherData] = useState({});
-  
-  useEffect(() => {
-    getWeatherWithFetch();
-  }, [userLocation]);
-
-  const getWeatherWithFetch = async () => {
-    const response = await fetch(weatherAPIUrl);
-    const jsonData = await response.json();
-    setWeatherData(jsonData);
-  };
-  // console.log(weatherData.current && weatherData.current.condition && weatherData.current.condition.text)
+function Header({user, setUser, handleDeleteAccount, weatherData}) {
 
   const handleLogout = () => {
     fetch('/logout',{

@@ -2,24 +2,19 @@ import React from 'react'
 import PostCard from './PostCard'
 import PostForm from './PostForm'
 
-function PostContainer({user, location}) {
+function PostContainer({user, location, weatherData}) {
 
-  // console.log(posts)
+  console.log(weatherData)
 
   return (
     <menu>
       
       <p>POSTS LIVE IN THE PostContainer</p>
 
-      <p>Japan is awesome</p>
+      <p>{user ? `Hello, ${user.username}! You're currently in ${user.home_location}! It's ${weatherData.current && weatherData.current.temp_f} degrees F`: null}</p>
 
-      <p>New York is cool</p>
-
-      <p>Seoul has soul</p>
-
-      <p>{user ? `Hello, ${user.username}! You're currently in ${user.home_location}!`: null}</p>
-
-      <PostCard />
+      {/* <PostCard /> */}
+      {/* <Card>{user ? `${user && user.username} | ${post && post.post_content}` : null}</Card> */}
 
       <PostForm user={user} location={location}/>
       
