@@ -4,7 +4,7 @@ import PostForm from './PostForm'
 
 function PostContainer({user, location, weatherData, handleDeletePosts}) {
 
-  console.log(weatherData)
+  // console.log(weatherData)
 
   return (
     <menu>

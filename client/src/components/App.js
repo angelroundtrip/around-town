@@ -8,7 +8,8 @@ import PostForm from "./PostForm";
 import ProfilePage from "./ProfilePage";
 import Signup from "./Signup";
 
-// * User posts and location default to the location that
+
+// const API_KEY = ENV['WEATHER_API_KEY']
 
 function App() {
 
@@ -89,10 +90,12 @@ function App() {
   // console.log(posts)
 
   // * WEATHER
-  const userLocation = user ? user.home_location : null
   
-  const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key=&q=${userLocation}&aqi=no`
+  const userLocation = user ? user.home_location : null
+  // * fetch from backend
+  const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=${userLocation}&aqi=no`
 
+  // JSON.parse(weatherAPI)
 
   const [weatherData, setWeatherData] = useState({});
   

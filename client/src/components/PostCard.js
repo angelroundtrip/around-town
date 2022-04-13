@@ -1,7 +1,8 @@
 import React, { useState, useEffect  } from 'react'
 import { Card } from 'semantic-ui-react'
+import PostContainer from './PostContainer'
 
-function PostCard({post, user, location, handleDeletePosts, weatherData, users, locations}) {
+function PostCard({post, user, location, handleDeletePosts, users, locations}) {
   // console.log(post && post.post_content && post.user && post.user.username)
   // console.log(user)
   // console.log(user && user.home_location && weatherData.current && weatherData.current.temp_f)
@@ -22,7 +23,24 @@ function PostCard({post, user, location, handleDeletePosts, weatherData, users, 
   const allLocations = locations.map(location => {return location.name})
   // console.log(allLocations)
   // console.log(weatherData)
+  // * bring weatherAPI in and substitute location names for each post
+
+  const postLocation = post && post.location && post.location.name
+  // * Fetch from the backend
+  const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=${postLocation}&aqi=no`
   // console.log(post && post.location && post.location.name)
+  // console.log(weatherAPIUrl)
+  const [weatherData, setWeatherData] = useState({});
+  
+  useEffect(() => {
+    getWeatherWithFetch();
+  }, [postLocation]);
+
+  const getWeatherWithFetch = async () => {
+    const response = await fetch(weatherAPIUrl);
+    const jsonData = await response.json();
+    setWeatherData(jsonData);
+  };
 
   return (
     <div>
@@ -30,7 +48,7 @@ function PostCard({post, user, location, handleDeletePosts, weatherData, users, 
       <p></p>
       <Card style={{border: '1px solid gray', padding: '20px'}}>
         {user ? `${post && post.post_content && post.user && post.user.username} | 
-        ${user.home_location} - 
+        ${post && post.location && post.location.name} - 
         ${weatherData && weatherData.current && weatherData.current.temp_f} °F -
         ${weatherData && weatherData.current && weatherData.current.condition && weatherData.current.condition.text} | 
         ${post && post.post_content}` : null} 
