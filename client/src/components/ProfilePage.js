@@ -6,8 +6,11 @@ import UserAccountUpdate from './UserAccountUpdate'
 function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
   return (
     <div>
+
+      <h1>Around Town</h1>
+      <hr></hr>
       
-      Hello, {user.username}! Here's your personal profile page, where you can update or delete your account
+      Hello, {user.first_name}! Here's your personal profile page, where you can update or delete your account
 
       <p>
       <NavLink to='/'>

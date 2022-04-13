@@ -6,13 +6,15 @@ import Homepage from "./Homepage";
 import Location from "./Location";
 import PostForm from "./PostForm";
 import ProfilePage from "./ProfilePage";
-// import Signup from "./Signup";
+import Signup from "./Signup";
 
+// * User posts and location default to the location that
 
 function App() {
 
+  // * USER ACCOUNTS
   const [user, setUser] = useState('')
-  console.log(user)
+  // console.log(user)
   
   useEffect(()=>{
     fetch('/me')
@@ -22,9 +24,18 @@ function App() {
         }
       })
   },[])
+ 
+  const handleDeleteAccount = () => {
+    fetch(`/users/${user.id}`,{
+      method:"DELETE",
+    })
+    setUser(null);
+    alert("User deleted")
+  }
 
+  // * LOCATIONS
   const [location, setLocation] = useState([])
-  console.log(location)
+  // console.log(location)
   
   useEffect(()=>{
     fetch('/me')
@@ -34,17 +45,27 @@ function App() {
         }
       })
   },[])
- 
-  // * Will be used in the profile page
-  const handleDeleteAccount = () => {
-    fetch(`http://localhost:4000/users/${user.id}`,{
-      method:"DELETE",
-    })
-    setUser(null);
-    alert("User deleted")
-  }
       
   // * POSTS
+  // * Doesn't work correctly at the moment. Post is deleted(after refreshing), but not completely. User can delete ANY post, not just their own
+  const [posts, setPosts] = useState('')
+
+  const handleDeletePosts = (id) => {
+    fetch(`/posts/${id}`,{
+      method:"DELETE",
+    })
+    // setPosts(null);
+    // alert("Post deleted")
+  }
+
+  // useEffect(()=>{
+  //   fetch('/me')
+  //     .then(r => {
+  //       if(r.ok){
+  //         r.json().then(data=>setPosts(data))
+  //       }
+  //     })
+  // },[])
   // const [posts, setPosts] = useState([])
 
   // const addNewPosts = newObj => {
@@ -91,11 +112,11 @@ function App() {
 
     <Routes>
 
-      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} location={location} weatherData={weatherData}/>}/>
+      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} location={location} weatherData={weatherData} handleDeletePosts={handleDeletePosts}/>}/>
 
-      {/* <Route path="/signup" element={<Signup />}/> */}
+      <Route path="/signup" element={<Signup />}/>
 
-      <Route path="/posts" element={<PostForm user={user}  location={location} />} />
+      <Route path="/posts" element={<PostForm user={user}  location={location} handleDeletePosts={handleDeletePosts} />} />
 
       <Route path="/profile" element={<ProfilePage user={user} setUser={setUser} weatherData={weatherData} location={location} handleDeleteAccount={handleDeleteAccount}/>} />
 

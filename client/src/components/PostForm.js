@@ -4,7 +4,7 @@ import Location from './Location'
 import PostList from './PostList'
 
 
-function PostForm({user, location}) {
+function PostForm({user, location, handleDeletePosts, weatherData}) {
 
   // * Post form is working and posts are saving to the database, but the location info isn't ideal 
 
@@ -13,7 +13,7 @@ function PostForm({user, location}) {
   // const id = useParams()
 
   // console.log(user.id)
-  // console.log(location)
+  // console.log(location && user.home_location)
   // console.log(posts)
 
   const addNewPosts = newObj => {
@@ -68,11 +68,13 @@ function PostForm({user, location}) {
 
   // const addPost = (post) => setPosts([post, ...posts])
   // console.log(user.posts && user.posts.post_content)
-  console.log(posts)
+  // console.log(posts)
 
   return(
     <div>
       <form onSubmit={submitNewPost}>
+
+      <PostList posts={posts} user={user} location={location} handleDeletePosts={handleDeletePosts} weatherData={weatherData}/>
 
       <h1>NEW POST</h1>
 
@@ -80,11 +82,8 @@ function PostForm({user, location}) {
      
       <button type="submit">Add Post</button>
 
-      <PostList posts={posts} user={user}/>
-
       {/* <button onClick={handleDeletePost}>Delete Post</button> */}
       
-
       </form>
     </div>
   )

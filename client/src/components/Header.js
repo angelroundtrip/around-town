@@ -27,8 +27,8 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
     });
   }
   // console.log(user)
-
-  
+  // const weatherIMAGE = <img src='https:{weatherData.current && weatherData.current.condition && weatherData.current.condition.icon}' alt="weather icon" />
+  console.log(weatherData.current && weatherData.current.condition && weatherData.current.condition.icon)
   
   return (
     
@@ -41,10 +41,10 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
       <button onClick={handleLogout}>Logout</button>
       </NavLink>
 
-      <a href='/profile' style={{textDecoration: 'none', marginLeft:'20px'}}>PROFILE PAGE</a>
+      <a href='/profile' style={{textDecoration: 'none', marginLeft:'20px', color:'black'}}><p>PROFILE PAGE</p></a>
      
        {/* Other useful data is available, would like to include weather icon eventually */}
-      <h5> {user ? user.home_location : null} | {weatherData.current && weatherData.current.temp_f} °F {weatherData.condition && weatherData.condition.icon} {weatherData.current && weatherData.current.condition && weatherData.current.condition.text}</h5>
+      <h5> {user ? user.home_location : null} | {weatherData.current && weatherData.current.temp_f} °F {weatherData.current && weatherData.current.condition && weatherData.current.condition.text}</h5>
       <span></span>
       {/* <h3>{user ? user.home_location : null}</h3> */}
      

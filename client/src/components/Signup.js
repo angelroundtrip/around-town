@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
+import Location from './Location'
 // import { useNavigate } from 'react-router-dom';
 
 function Signup() {
@@ -47,57 +49,69 @@ function Signup() {
   return (
     // *Signup Form
 
-    <div > 
-      {/* <a href='/'>SIGNUP PAGE</a> */}
+    <div> 
 
-    <p></p>
-    <form onSubmit={onSubmit}>
-    <label >
-      Username:
-      <input style={{ marginLeft:'20px'}} type="text" value={username} onChange={(e) => handleUsername(e)} />
-    </label>
-    
-    <p></p>
-    <label>
-      Password:
-    <input style={{ marginLeft:'20px'}} type="password" value={password} onChange={(e) => handlePassword(e)} />
-    </label>
+      <a href='/' style={{textDecoration: 'none', color: 'black'}}><h1>Around Town</h1></a>
 
-    <p></p>
-    <label htmlFor="email">Email:</label>
-    <input
-      style={{ marginLeft:'20px'}}
-      type="text"
-      id="email"
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-    />
+      <hr></hr>
 
-    <p></p>
-    <label htmlFor="first_name">First Name:</label>
-    <input
-      style={{ marginLeft:'20px'}}
-      type="text"
-      id="first_name"
-      value={firstName}
-      onChange={(e) => setFirstName(e.target.value)}
-    />
+      <h4>Create Account</h4>
 
-    <p></p>
-    <label htmlFor="home_location">Home Location:</label>
-    <input
-      style={{ marginLeft:'20px'}}
-      type="text"
-      id="home_location"
-      value={homeLocation}
-      onChange={(e) => setHomeLocation(e.target.value)}
-    />
-    
-    <p></p>
-    <button type="submit">Signup</button>
+      <p></p>
+      <form onSubmit={onSubmit}>
+      <label >
+        Username:
+        <input style={{ marginLeft:'20px'}} type="text" value={username} onChange={(e) => handleUsername(e)} />
+      </label>
+      
+      <p></p>
+      <label>
+        Password:
+      <input style={{ marginLeft:'20px'}} type="password" value={password} onChange={(e) => handlePassword(e)} />
+      </label>
 
-    </form>
-    {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null}
+      <p></p>
+      <label htmlFor="email">Email:</label>
+      <input
+        style={{ marginLeft:'20px'}}
+        type="text"
+        id="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <p></p>
+      <label htmlFor="first_name">First Name:</label>
+      <input
+        style={{ marginLeft:'20px'}}
+        type="text"
+        id="first_name"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+      />
+
+      <p></p>
+      {/* <label htmlFor="home_location">Home Location: <Location /></label> */}
+      <label htmlFor="home_location">Home Location: </label>
+      <input
+        style={{ marginLeft:'20px'}}
+        type="text"
+        id="home_location"
+        value={homeLocation}
+        onChange={(e) => setHomeLocation(e.target.value)}
+      />
+      
+      <p></p>
+      <button type="submit">Signup</button>
+
+      <p></p>
+      <NavLink to='/home'>
+      <button>TEMPORARY HOME PAGE BUTTON</button> 
+      </NavLink>
+
+      </form>
+      {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null}
+
     </div>
   )
 }

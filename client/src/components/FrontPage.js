@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import seoul from "../images/seoul.jpg";
 import Login from './Login';
 import Signup from './Signup';
@@ -6,6 +6,11 @@ import Signup from './Signup';
 
 function FrontPage({user, setUser}) {
 
+  // const [hasAccount, setHasAccount] = useState(true)
+
+  // const toggleAccount = () => {
+  //   setHasAccount(!hasAccount)
+  // }
 
   return (
 
@@ -14,17 +19,27 @@ function FrontPage({user, setUser}) {
       <h1>Around Town</h1>
       <hr></hr>
 
+      {/* {hasAccount ? (<h3>LOGIN</h3> <Login setUser={setUser}) /> : null} */}
+
       <h3>LOGIN</h3>
       <Login setUser={setUser} />
-      {/* <button onClick={apiGet}>FETCH</button> */}
 
-      {/* <a href='signup'>Create account</a> */}
-      <h3>Create an account</h3>
-      <Signup />
+      <p></p>
+      <a style={{textDecoration: 'none'}}href='home'> <button>TEMPORARY HOME PAGE BUTTON</button> </a>
+      
+      <p></p>
+      <>_____________________________________</>
+      <br></br>
+      {/* <button onClick={toggleAccount}>CREATE ACCOUNT</button> */}
+      {/* <button onClick={apiGet}>FETCH</button> */}
+      <p></p>
+      <a href='signup'><button>Create new account</button></a>
+      {/* <h3>Create an account</h3>
+      <Signup /> */}
+
+      {/* { hasAccount ? (<button onClick={toggleAccount} className="primary">Login</button>) : (<button>Signup</button>) }  */}
 
       {/* <img src={seoul} alt='background'/> */}
-
-      <a style={{textDecoration: 'none'}}href='home'> <button>TEMPORARY HOME PAGE BUTTON</button> </a>
 
     </header>
     
