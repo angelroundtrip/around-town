@@ -44,6 +44,7 @@ function Login() {
           type="text"
           id="username"
           value={username}
+          placeholder="Enter username"
           onChange={(e) => setUsername(e.target.value)}
         />
 
@@ -53,6 +54,7 @@ function Login() {
           type="password"
           id="password"
           value={password}
+          placeholder="Enter password"
           onChange={(e) => setPassword(e.target.value)}
           />
 
