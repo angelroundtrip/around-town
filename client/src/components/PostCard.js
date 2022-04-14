@@ -1,6 +1,6 @@
 import React, { useState, useEffect  } from 'react'
 import { Card } from 'semantic-ui-react'
-import PostContainer from './PostContainer'
+
 
 function PostCard({post, user, location, handleDeletePosts, users, locations, weatherData}) {
 
