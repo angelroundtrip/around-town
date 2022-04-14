@@ -16,9 +16,10 @@ import UserAccountUpdate from './UserAccountUpdate';
 
 function Header({user, setUser, handleDeleteAccount, weatherData}) {
 
+  
   const handleLogout = () => {
     fetch('/logout',{
-        method:'DELETE'
+      method:'DELETE'
     })
     .then((r) => {
       if (r.ok) {
@@ -26,6 +27,7 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
       }
     });
   }
+  
   // console.log(user)
   // const weatherIMAGE = <img src='https:{weatherData.current && weatherData.current.condition && weatherData.current.condition.icon}' alt="weather icon" />
   console.log(weatherData.current && weatherData.current.condition && weatherData.current.condition.icon)
@@ -33,6 +35,14 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
   return (
     
     <div>
+      {/* Can delete weather button after testing */}
+      <button onClick={()=>{
+        fetch('/weather')
+          .then(r => r.json())
+          .then(data => console.log(data))
+      }}>WEATHER</button>
+      
+
       <h1>HEADER</h1>
       
       <h2> {user ? user.username : <a href='/' style={{textDecoration: 'none'}}> Login </a>}</h2>

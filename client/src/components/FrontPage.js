@@ -15,6 +15,12 @@ function FrontPage({user, setUser}) {
   return (
 
     <header>
+      {/* Can delete button after testing */}
+      <button onClick={()=>{
+      fetch('/weather')
+        .then(r => r.json())
+        .then(data => console.log(data))
+      }}> WEATHER </button>
 
       <h1>Around Town</h1>
       <hr></hr>

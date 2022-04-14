@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :locations
   resources :users
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -14,5 +15,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   post '/locations', to: 'locations#create'
+
+  get '/weather', to: 'weather#show'
   
 end

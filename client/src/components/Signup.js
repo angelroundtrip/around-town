@@ -36,7 +36,7 @@ function Signup() {
       })
       .then(res => res.json())
       .then(user => {
-          console.log(user)
+          // console.log(user)
           if (!user.errors)  { 
             alert("Signup successful")
             // navigate(`/home`)

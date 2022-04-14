@@ -10,6 +10,7 @@ import Signup from "./Signup";
 
 
 // const API_KEY = ENV['WEATHER_API_KEY']
+// * Can write a separate controller just for the weather, to fetch the API. Can do the same as what's in the controller action
 
 function App() {
 
@@ -48,25 +49,26 @@ function App() {
   },[])
       
   // * POSTS
-  // * Doesn't work correctly at the moment. Post is deleted(after refreshing), but not completely. User can delete ANY post, not just their own
-  const [posts, setPosts] = useState('')
-
-  const handleDeletePosts = (id) => {
-    fetch(`/posts/${id}`,{
-      method:"DELETE",
-    })
-    // setPosts(null);
-    // alert("Post deleted")
-  }
+  // * Doesn't work correctly at the moment. Post is deleted(after refreshing), but not completely on the front end (it is on the back end). User can delete ANY post, not just their own. Weather data is not deleted
+  const [post, setPost] = useState('')
 
   // useEffect(()=>{
   //   fetch('/me')
   //     .then(r => {
   //       if(r.ok){
-  //         r.json().then(data=>setPosts(data))
+  //         r.json().then(data=>setPost(data))
   //       }
   //     })
   // },[])
+
+  const handleDeletePosts = (id) => {
+    fetch(`/posts/${id}`,{
+      method:"DELETE",
+    })
+    setPost(null);
+    // alert("Post deleted")
+  }
+
   // const [posts, setPosts] = useState([])
 
   // const addNewPosts = newObj => {

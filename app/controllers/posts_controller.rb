@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # fetch api from here
 
   def index
     render json: Post.all
