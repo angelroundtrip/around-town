@@ -8,18 +8,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    # weatherAPIUrl = "http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=#{user.home_location}&aqi=no"
-    # render json: {currentUser: @current_user, currentWeather: "This should be API stuff"}, status: :created
     render json: @current_user
   end
-  # CREATE ACTION WOULD HAVE TO CONTACT API
+
   def create
-      user = User.create!(user_params)
-      session[:user_id] = user.id
-      # weatherAPIUrl = "http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=#{user.home_location}&aqi=no"
-      # debugger
-      # render json: {user: user, currentWeather: "This should be API stuff"}, status: :created
-      render json: user, status: :created
+    user = User.create!(user_params)
+    session[:user_id] = user.id
+    render json: user, status: :created
   end
 
   def update 

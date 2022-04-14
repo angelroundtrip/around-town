@@ -41,17 +41,14 @@ function Location() {
     <p></p>
     <form onSubmit={onSubmit}>
 
-    <label >
-      Location:
+    <label> Location: </label>
       <input 
         style={{ marginLeft:'20px'}} 
-        type="text" value={location} 
+        type="text" 
+        value={location} 
+        placeholder="eg: Lima, Peru"
         onChange={(e) => handleLocation(e)}
       />
-    </label>
-    
-      {/* <PostForm location={location}/> */}
-    <p></p>
     
     <p></p>
     <button type="submit">Location</button>
