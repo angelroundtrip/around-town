@@ -14,8 +14,31 @@ import UserAccountUpdate from './UserAccountUpdate';
 // * Moving on for now, but come back and hide api key...
 // * API works, refresh changes to null
 
-function Header({user, setUser, handleDeleteAccount, weatherData}) {
+function Header({user, setUser, handleDeleteAccount}) {
 
+  const [weatherData, setWeatherData] = useState({});
+  // const userLocation = user ? user.home_location : null
+  
+  
+  const getWeather = () => {
+    fetch('/weather')
+      .then(r => r.json())
+      .then(setWeatherData);
+  }
+
+  useEffect(() => {
+    getWeather();
+  }, []);
+
+  console.log(weatherData.currentCity)
+
+  // const getWeather = async () => {
+  //   const response = await fetch('/weather')
+  //   .then(r => r.json())
+  //   .then(data => console.log(data));
+  //   const jsonData = await response.json();
+  //   setWeatherData(jsonData);
+  // };
   
   const handleLogout = () => {
     fetch('/logout',{
@@ -30,18 +53,18 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
   
   // console.log(user)
   // const weatherIMAGE = <img src='https:{weatherData.current && weatherData.current.condition && weatherData.current.condition.icon}' alt="weather icon" />
-  console.log(weatherData.current && weatherData.current.condition && weatherData.current.condition.icon)
-  
+  // console.log(weatherData.current && weatherData.current.condition && weatherData.current.condition.icon)
+
   return (
     
     <div>
       {/* Can delete weather button after testing */}
-      <button onClick={()=>{
+      {/* <button onClick={()=>{
         fetch('/weather')
           .then(r => r.json())
           .then(data => console.log(data))
       }}>WEATHER</button>
-      
+       */}
 
       <h1>HEADER</h1>
       
@@ -54,7 +77,7 @@ function Header({user, setUser, handleDeleteAccount, weatherData}) {
       <a href='/profile' style={{textDecoration: 'none', marginLeft:'20px', color:'black'}}><p>PROFILE PAGE</p></a>
      
        {/* Other useful data is available, would like to include weather icon eventually */}
-      <h5> {user ? user.home_location : null} | {weatherData.current && weatherData.current.temp_f} °F {weatherData.current && weatherData.current.condition && weatherData.current.condition.text}</h5>
+      <h5> {user ? `${weatherData.currentCity}, ${weatherData.currentState} ${weatherData.currentCountry} | ${weatherData.currentTemperature} °F ${weatherData.currentCondition}` : null} </h5>
       <span></span>
       {/* <h3>{user ? user.home_location : null}</h3> */}
      

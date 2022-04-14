@@ -97,8 +97,6 @@ function App() {
   // * fetch from backend
   const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=${userLocation}&aqi=no`
 
-  // JSON.parse(weatherAPI)
-
   const [weatherData, setWeatherData] = useState({});
   
   useEffect(() => {
