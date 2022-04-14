@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import Location from './Location'
 import PostList from './PostList'
 
 
 function PostForm({user, location, handleDeletePosts, weatherData}) {
 
-  // * Post form is working and posts are saving to the database, but the location info isn't ideal 
-
   const [postContent, setPostContent] = useState("")
   const [posts, setPosts] = useState([])
-  // const id = useParams()
-
-  // console.log(user.id)
-  // console.log(location && user.home_location)
-  // console.log(posts)
-
+  
   const addNewPosts = newObj => {
     fetch(`/posts`, {
       method: 'POST', 
@@ -35,21 +26,11 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
       user_id: user.id,
       location_id: location.id
     }
-    // const addNewPost = [newPost, ...posts]
-    // setPosts(addNewPost)
     addNewPosts(newPost)
     setPostContent("")
     console.log(newPost)
-    //! MIGHT NEED CODE BELOW
-    // fetch(`/posts`,{
-    //   method: "POST",
-    //   headers: {"Content-Type": "application/json",},
-    //   body: JSON.stringify(newPost),
-    //   credentials: "include"
-    // })
-    //   .then(r=>r.json())
-    //   .then(console.log); 
   }
+
   // * Renders all posts
   useEffect(()=>{
     fetch(`/posts`)
@@ -57,35 +38,32 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
     .then(setPosts)
   }, [])
 
-
-  // const handleDeletePost = () => {
-  //   fetch(`http://localhost:4000/posts/${posts.id}`,{
-  //     method:"DELETE",
-  //   })
-  //   setPosts(null);
-  //   // alert("Post deleted")
-  // }
-
-  // const addPost = (post) => setPosts([post, ...posts])
-  // console.log(user.posts && user.posts.post_content)
-  // console.log(posts)
-
   return(
     <div>
       <form onSubmit={submitNewPost}>
 
-      <PostList posts={posts} user={user} location={location} handleDeletePosts={handleDeletePosts} weatherData={weatherData}/>
+      <PostList 
+        posts={posts} 
+        user={user} 
+        location={location} 
+        handleDeletePosts={handleDeletePosts} 
+        weatherData={weatherData}
+      />
 
-      <h1>NEW POST</h1>
+      <h1> NEW POST </h1>
 
-      <input onChange={(e)=>setPostContent(e.target.value)} type="text" name="postContent" value={postContent}/>
+      <input 
+        onChange={(e)=>setPostContent(e.target.value)} 
+        type="text" 
+        name="postContent" 
+        value={postContent}
+      />
      
-      <button type="submit">Add Post</button>
-
-      {/* <button onClick={handleDeletePost}>Delete Post</button> */}
+      <button type="submit"> Add Post </button>
       
       </form>
     </div>
   )
 }
+
 export default PostForm
