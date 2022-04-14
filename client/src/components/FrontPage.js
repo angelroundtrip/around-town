@@ -22,6 +22,7 @@ function FrontPage({user, setUser}) {
         .then(data => console.log(data))
       }}> WEATHER </button>
 
+
       <h1>Around Town</h1>
       <hr></hr>
 
