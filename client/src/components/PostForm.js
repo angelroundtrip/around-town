@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PostList from './PostList'
+import { Button, Input } from 'semantic-ui-react'
 
 
 function PostForm({user, location, handleDeletePosts, weatherData}) {
@@ -52,7 +53,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
 
       <h1> NEW POST </h1>
 
-      <input 
+      <Input 
         onChange={(e)=>setPostContent(e.target.value)} 
         type="text" 
         name="postContent" 

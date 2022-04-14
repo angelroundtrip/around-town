@@ -34,27 +34,27 @@ function Login() {
   
   return (
     
-    <div>
+    <div style={{marginTop: '10%'}}>
       
       <form onSubmit={handleSubmit}>
 
       <p></p>
-        <label htmlFor="username">Username:</label>
-        <input
+        {/* <label htmlFor="username">Username:</label> */}
+        <input className="input"
           type="text"
           id="username"
           value={username}
-          placeholder="Enter username"
+          placeholder="USERNAME"
           onChange={(e) => setUsername(e.target.value)}
         />
 
       <p></p>
-        <label htmlFor="password">Password:</label>
+        {/* <label htmlFor="password">Password:</label> */}
         <input
           type="password"
           id="password"
           value={password}
-          placeholder="Enter password"
+          placeholder="PASSWORD"
           onChange={(e) => setPassword(e.target.value)}
           />
 

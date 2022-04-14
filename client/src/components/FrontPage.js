@@ -19,14 +19,14 @@ function FrontPage({user, setUser}) {
 
       {/* {hasAccount ? (<h3>LOGIN</h3> <Login setUser={setUser}) /> : null} */}
 
-      <h3>LOGIN</h3>
+      {/* <h3>LOGIN</h3> */}
       <Login setUser={setUser} />
 
       <p></p>
       <a style={{textDecoration: 'none'}}href='home'> <button>TEMPORARY HOME PAGE BUTTON</button> </a>
       
       <p></p>
-      <>_____________________________________</>
+      <>________________________________________________________________</>
       <br></br>
     
       <p></p>
