@@ -10,7 +10,7 @@ function Signup() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
-  const [firstName, setFirstName] = useState('')
+  const [name, setName] = useState('')
   const [homeLocation, setHomeLocation] = useState('')
   const [errors, setErrors] = useState([])
   
@@ -19,39 +19,39 @@ function Signup() {
   // const navigate = useNavigate();
 
   function onSubmit(e){
-      e.preventDefault()
-      const newUser = {
-        username: username,
-        password: password,
-        email: email,
-        first_name: firstName,
-        home_location: homeLocation,
-      }
-      console.log(newUser)
+    e.preventDefault()
+    const newUser = {
+      username: username,
+      password: password,
+      email: email,
+      first_name: name,
+      home_location: homeLocation,
+    }
+    console.log(newUser)
      
-      fetch(`/signup`,{
-        method:'POST',
-        headers:{'Content-Type': 'application/json'},
-        body:JSON.stringify(newUser)
-      })
+    fetch(`/signup`,{
+      method:'POST',
+      headers:{'Content-Type': 'application/json'},
+      body:JSON.stringify(newUser)
+    })
       .then(res => res.json())
       .then(user => {
-          // console.log(user)
-          if (!user.errors)  { 
-            alert("Signup successful")
-            // navigate(`/home`)
-          } else {
-          setErrors(Object.entries(user.errors))
+        // console.log(user)
+        if (!user.errors)  { 
+          alert("Signup successful")
+          // navigate(`/home`)
+        } else {
+        setErrors(Object.entries(user.errors))
         }
       })  
     }
 
   return (
-    // *Signup Form
-
     <div> 
 
-      <a href='/' style={{textDecoration: 'none', color: 'black'}}><h1>Around Town</h1></a>
+      <a href='/' style={{textDecoration: 'none', color: 'black'}}>
+        <h1>Around Town</h1>
+      </a>
 
       <hr></hr>
 
@@ -59,47 +59,56 @@ function Signup() {
 
       <p></p>
       <form onSubmit={onSubmit}>
-      <label >
-        Username:
-        <input style={{ marginLeft:'20px'}} type="text" value={username} onChange={(e) => handleUsername(e)} />
-      </label>
+
+      <label> Username: </label>
+        <input style={{ marginLeft:'20px'}} 
+          type="text" 
+          value={username} 
+          placeholder="Enter username"
+          onChange={(e) => handleUsername(e)} 
+        />
       
       <p></p>
-      <label>
-        Password:
-      <input style={{ marginLeft:'20px'}} type="password" value={password} onChange={(e) => handlePassword(e)} />
-      </label>
+      <label> Password: </label>
+        <input style={{ marginLeft:'20px'}} 
+          type="password" 
+          value={password} 
+          placeholder="Enter password"
+          onChange={(e) => handlePassword(e)} 
+        />
+      
+      <p></p>
+      <label htmlFor="email">Email: </label>
+        <input
+          style={{ marginLeft:'20px'}}
+          type="text"
+          id="email"
+          value={email}
+          placeholder="Enter email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
       <p></p>
-      <label htmlFor="email">Email:</label>
-      <input
-        style={{ marginLeft:'20px'}}
-        type="text"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+      <label htmlFor="first_name"> Name: </label>
+        <input
+          style={{ marginLeft:'20px'}}
+          type="text"
+          id="first_name"
+          value={name}
+          placeholder="Enter name"
+          onChange={(e) => setName(e.target.value)}
+        />
 
       <p></p>
-      <label htmlFor="first_name">First Name:</label>
-      <input
-        style={{ marginLeft:'20px'}}
-        type="text"
-        id="first_name"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-
-      <p></p>
-      {/* <label htmlFor="home_location">Home Location: <Location /></label> */}
-      <label htmlFor="home_location">Home Location: </label>
-      <input
-        style={{ marginLeft:'20px'}}
-        type="text"
-        id="home_location"
-        value={homeLocation}
-        onChange={(e) => setHomeLocation(e.target.value)}
-      />
+      <label htmlFor="home_location"> Current Location: </label>
+        <input
+          style={{ marginLeft:'20px'}}
+          type="text"
+          id="home_location"
+          value={homeLocation}
+          placeholder="eg: Tokyo, Japan"
+          onChange={(e) => setHomeLocation(e.target.value)}
+        />
       
       <p></p>
       <button type="submit">Signup</button>
