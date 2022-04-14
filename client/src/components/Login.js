@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom';
-import Header from './Header'
+import { useNavigate } from 'react-router-dom';
 
-function Login({setUser}) {
-  // *Login works, but all users get logged in...
-  
+
+function Login() {
+ 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState([])
@@ -22,13 +21,13 @@ function Login({setUser}) {
     })
     .then(res => res.json())
     .then(user => {
-        console.log(user)
-        if (!user.errors)  { 
-          alert("Login successful")
-          // navigate(`/posts`)
+      // console.log(user)
+      if (!user.errors)  { 
+        alert("Login successful")
+      // navigate(`/posts`)
         } else {
-        setError(Object.entries(user.errors))
-        alert("Incorrect login")
+          setError(Object.entries(user.errors))
+          alert("Incorrect login")
       }
     })  
   }
@@ -58,14 +57,13 @@ function Login({setUser}) {
           />
 
       <p></p>
-      {/* <NavLink to='/home'> */}
         <button type="submit">Login</button>
-      {/* </NavLink> */}
-      
+  
       </form>
       {error?<div>{error}</div>:null}
      
     </div>
   );
 }
+
 export default Login
