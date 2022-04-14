@@ -1,24 +1,33 @@
 class WeatherController < ApplicationController
-
-  def index
-    # weather = Weather.all
-    # render json: weather
-  end
-
-  # * There's a discrepancy between US and international locations with how the data fetches (name, region, country)
+  # This controller will handle the weather related API actions.
   def show
-      weatherAPIUrl = "http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=#{@current_user.home_location}&aqi=no"
-      weather = RestClient.get(weatherAPIUrl)
+      weatherAPI = "http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=#{@current_user.home_location}&aqi=no"
+
+      # bundle add rest-client
+      weather = RestClient.get(weatherAPI)
+
+      # bundle add json
       weatherData = JSON.parse(weather)
-      currentCity = weatherData["location"]["name"] 
+
+      currentCity = weatherData["location"]["name"]
+
       currentState = weatherData["location"]["region"]
+
       currentCountry = weatherData["location"]["country"]
-      # currentLocation = weatherData["location"]["name"]["region"]
+
       currentTemperature = weatherData["current"]["temp_f"]
+
       currentCondition = weatherData["current"]["condition"]["text"]
+
       # debugger
-      render json: {currentCity: currentCity, currentState: currentState, currentCountry: currentCountry, currentTemperature: currentTemperature, currentCondition: currentCondition, currentCondition: currentCondition}
-      # render json: {currentLocation: currentLocation, currentTemperature: currentTemperature, currentCondition: currentCondition}
+
+      render json: {
+        currentCity: currentCity, 
+        currentState: currentState, 
+        currentCountry: currentCountry, 
+        currentTemperature: currentTemperature,
+        currentCondition: currentCondition 
+      }
   end
 
 end

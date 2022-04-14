@@ -1,16 +1,12 @@
 // import '../App.css';
 import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import FrontPage from "./FrontPage";
 import Homepage from "./Homepage";
-import Location from "./Location";
 import PostForm from "./PostForm";
 import ProfilePage from "./ProfilePage";
 import Signup from "./Signup";
 
-
-// const API_KEY = ENV['WEATHER_API_KEY']
-// * Can write a separate controller just for the weather, to fetch the API. Can do the same as what's in the controller action
 
 function App() {
 
@@ -92,40 +88,69 @@ function App() {
   // console.log(posts)
 
   // * WEATHER
-  
-  const userLocation = user ? user.home_location : null
-  // * fetch from backend
-  const weatherAPIUrl = `http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=${userLocation}&aqi=no`
-
   const [weatherData, setWeatherData] = useState({});
   
-  useEffect(() => {
-    getWeatherWithFetch();
-  }, [userLocation]);
+  const getWeather = () => {
+    fetch('/weather')
+      .then(r => r.json())
+      .then(setWeatherData);
+  }
 
-  const getWeatherWithFetch = async () => {
-    const response = await fetch(weatherAPIUrl);
-    const jsonData = await response.json();
-    setWeatherData(jsonData);
-  };
-  // console.log(weatherData.current && weatherData.current.condition && weatherData.current.condition.text)
+  useEffect(() => {
+    getWeather();
+  }, []);
+  console.log(weatherData)
 
   return (
     <div className="App">
 
     <Routes>
 
-      <Route path="/home" element={<Homepage user={user} setUser={setUser} handleDeleteAccount={handleDeleteAccount} location={location} weatherData={weatherData} handleDeletePosts={handleDeletePosts}/>}/>
+      <Route path="/home" 
+        element={
+          <Homepage 
+            user={user} 
+            setUser={setUser} 
+            handleDeleteAccount={handleDeleteAccount} 
+            location={location} 
+            weatherData={weatherData} 
+            handleDeletePosts={handleDeletePosts}
+          />
+        }
+      />
 
       <Route path="/signup" element={<Signup />}/>
 
-      <Route path="/posts" element={<PostForm user={user}  location={location} handleDeletePosts={handleDeletePosts} />} />
+      <Route path="/posts" 
+        element={
+          <PostForm 
+            user={user}  
+            location={location} 
+            handleDeletePosts={handleDeletePosts} 
+          />
+        } 
+      />
 
-      <Route path="/profile" element={<ProfilePage user={user} setUser={setUser} weatherData={weatherData} location={location} handleDeleteAccount={handleDeleteAccount}/>} />
-
-      {/* <Route path="/locations" element={<Location user={user}  />} /> */}
+      <Route path="/account" 
+        element={
+          <ProfilePage 
+          user={user} 
+          setUser={setUser} 
+          weatherData={weatherData} 
+          location={location} 
+          handleDeleteAccount={handleDeleteAccount}
+          />
+        } 
+      />
     
-      <Route path="/" element={<FrontPage user={user} setUser={setUser}/>}/>
+      <Route path="/" 
+        element={
+          <FrontPage 
+            user={user} 
+            setUser={setUser}
+          />
+        }
+      />
 
     </Routes>
     

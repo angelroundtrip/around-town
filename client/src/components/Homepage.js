@@ -4,7 +4,6 @@ import Header from './Header';
 import PostContainer from './PostContainer';
 
 function Homepage({user, setUser, handleDeleteAccount, weatherData, location, handleDeletePosts}) {
-  // console.log(location)
 
   return (
     <div>
