@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PostForm from './PostForm'
 // import { useNavigate } from 'react-router-dom';
 
-function Location({user}) {
+function Location() {
   
   const [location, setLocation] = useState('')
   const [errors, setErrors] = useState([])
@@ -36,16 +36,18 @@ function Location({user}) {
   }
   
   return (
-    
     <div > 
      
-
     <p></p>
     <form onSubmit={onSubmit}>
 
     <label >
       Location:
-      <input style={{ marginLeft:'20px'}} type="text" value={location} onChange={(e) => handleLocation(e)} />
+      <input 
+        style={{ marginLeft:'20px'}} 
+        type="text" value={location} 
+        onChange={(e) => handleLocation(e)}
+      />
     </label>
     
       {/* <PostForm location={location}/> */}
@@ -55,7 +57,7 @@ function Location({user}) {
     <button type="submit">Location</button>
 
     </form>
-    {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null}
+      {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null}
     </div>
   )
 }
