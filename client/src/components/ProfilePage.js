@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import NavBar from './NavBar'
 import UserAccountUpdate from './UserAccountUpdate'
 
 function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
@@ -8,18 +9,26 @@ function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
   return (
     <div>
 
-      <h1>Around Town</h1>
-      <hr></hr>
+      <NavBar />
+
+      {/* <h1>Around Town</h1> */}
+
+      {/* <div style={{borderBottom: '1px solid navy', marginTop: '1%'}}></div> */}
       
-      Hello, {user.first_name}! Here's your personal profile page, where you can update or delete your account
+      <p>Hello, {user.first_name}! Here's your personal profile page, where you can update or delete your account</p>
+
+      <UserAccountUpdate user={user} setUser={setUser}/>
 
       <p>
         <NavLink to='/'>
-          <button onClick={handleDeleteAccount}> Delete Account </button>
+          <button 
+            style={{marginTop:'2%'}} 
+            onClick={handleDeleteAccount}
+          > 
+            Delete Account 
+          </button>
         </NavLink>
       </p>
-
-      <UserAccountUpdate user={user} setUser={setUser}/>
 
       <a href='/home' style={{textDecoration: 'none'}}>
         <button>TEMP Home Button</button>

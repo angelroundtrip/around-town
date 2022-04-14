@@ -76,50 +76,52 @@ function UserAccountUpdate({user, setUser}) {
   return (
     <div>
 
-      <span style={{fontWeight: 'bold'}}> UPDATE ACCOUNT </span>
+    <p style={{marginTop: '20%'}}></p>
+      {/* <span style={{fontWeight: 'bold'}}> UPDATE ACCOUNT </span> */}
 
       {error?error.map(e => <div>{e}</div>):null}
 
       <form onSubmit={handleSubmitUpdateForm} >
 
-        <label> Username: </label>
+        {/* <label> Username: </label> */}
           <input 
             type="text" 
             value={updateUsername} 
-            placeholder="Update username"
+            placeholder="UPDATE USERNAME"
             onChange={handleUsernameChange} 
           />
        
-        <label> Password: </label>
+        {/* <label> Password: </label> */}
           <input 
             type="password" 
             value={updatePassword} 
-            placeholder="Update password"
+            placeholder="UPDATE PASSWORD"
             onChange={handlePasswordChange} 
           />
 
-        <label> Email: </label>
+        {/* <label> Email: </label> */}
           <input 
             type="text" 
             value={updateEmail} 
-            placeholder="Update email"
+            placeholder="UPDATE EMAIL"
             onChange={handleEmailChange} 
           />
 
-        <label> Name: </label> 
+        {/* <label> Name: </label>  */}
           <input 
             type="text" 
             value={updateName} 
-            placeholder="Update name"
+            placeholder="UPDATE NAME"
             onChange={handleNameChange} 
           />
        
 
-        <label> Current Location: </label> 
+        {/* <label> Current Location: </label>  */}
           <input 
            type="text" 
            value={updateHomeLocation} 
-           placeholder="eg: New York, New York"
+           placeholder="UPDATE LOCATION"
+          //  placeholder="eg: New York, New York"
            onChange={handleHomeLocationChange} 
           />
     
