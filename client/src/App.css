@@ -34,7 +34,7 @@
   border-radius: 5px;
   margin: 20px;
   margin-top: 30px;
-  outline: 1px solid blue;
+  outline: 1px solid peachpuff;
   
 }
 
@@ -43,15 +43,30 @@
   border-radius: 5px;
 }
 
-Button{
+button{
   background-color: transparent;
   border-radius: 10px;
   border: 1px solid red;
   padding: 10px;
 }
 
-Input{
+button:hover{
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+input{
   text-align: center;
   border: 1px solid navy;
   border-radius: 5px;
+  padding: 0.5%;
+}
+
+.nav{
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  color: black;
 }

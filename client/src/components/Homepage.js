@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header';
+import Header from './NavBar';
 import PostContainer from './PostContainer';
 
 function Homepage({user, setUser, handleDeleteAccount, weatherData, location, handleDeletePosts}) {

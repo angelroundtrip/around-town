@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PostList from './PostList'
-import { Button, Input } from 'semantic-ui-react'
+import { Input } from 'semantic-ui-react'
 
 
 function PostForm({user, location, handleDeletePosts, weatherData}) {
