@@ -1,6 +1,6 @@
 class WeatherController < ApplicationController
   # This controller will handle the weather related API actions.
-  def show
+  def userWeather
       weatherAPI = "http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=#{@current_user.home_location}&aqi=no"
 
       # bundle add rest-client

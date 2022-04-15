@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post '/locations', to: 'locations#create'
 
-  get '/weather', to: 'weather#show'
+  get '/weather', to: 'weather#userWeather'
   
 end

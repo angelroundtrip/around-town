@@ -15,8 +15,8 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
       body: JSON.stringify(newObj)
     })
     .then(r => r.json())
-    .then(data => {
-      setPosts([data, ...posts])
+    .then(post => {
+      setPosts([post, ...posts])
     })
   }
 

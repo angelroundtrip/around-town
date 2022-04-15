@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PostForm from './PostForm'
 
-function PostContainer({user, location, weatherData, handleDeletePosts}) {
+function PostContainer({user, location, weatherData, handleDeletePosts, posts}) {
 
   // console.log(weatherData)
+  
 
   return (
     <menu>
@@ -12,7 +13,7 @@ function PostContainer({user, location, weatherData, handleDeletePosts}) {
 
       <p>{user ? `Hello, ${user.username}! You're currently in ${user.home_location}! It's ${weatherData.currentTemperature} degrees °F`: null}</p>
 
-      <>______________________________________________</>
+      <div style={{color: 'navy'}} >______________________________________________</div>
 
       <PostForm 
         user={user} 

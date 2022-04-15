@@ -33,6 +33,7 @@ function PostList({posts, user, handleDeletePosts, weatherData, location}) {
           weatherData={weatherData} 
           users={users} 
           locations={locations}
+          posts={posts}
         />
       )}
     </div>

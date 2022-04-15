@@ -18,7 +18,7 @@ function App() {
     fetch('/me')
       .then(r => {
         if(r.ok){
-          r.json().then(data=>setUser(data))
+          r.json().then(user=>setUser(user))
         }
       })
   },[])
@@ -39,53 +39,53 @@ function App() {
     fetch('/me')
       .then(r => {
         if(r.ok){
-          r.json().then(data=>setLocation(data))
+          r.json().then(location=>setLocation(location))
         }
       })
   },[])
       
-  // * POSTS
-  // * Doesn't work correctly at the moment. Post is deleted(after refreshing), but not completely on the front end (it is on the back end). User can delete ANY post, not just their own. Weather data is not deleted
-  const [post, setPost] = useState('')
+  // * POSTS (need refactoring, same code is currently in postForm and app breaks if it's removed)
+  const [postContent, setPostContent] = useState("")
+  const [posts, setPosts] = useState([])
+  
+  const addNewPosts = newObj => {
+    fetch(`/posts`, {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newObj)
+    })
+    .then(r => r.json())
+    .then(post => {
+      setPosts([post, ...posts])
+    })
+  }
 
-  // useEffect(()=>{
-  //   fetch('/me')
-  //     .then(r => {
-  //       if(r.ok){
-  //         r.json().then(data=>setPost(data))
-  //       }
-  //     })
-  // },[])
+  const submitNewPost = (e) => {
+    e.preventDefault()
+    const newPost = {
+      post_content: postContent,
+      user_id: user.id,
+      location_id: location.id
+    }
+    addNewPosts(newPost)
+    setPostContent("")
+    console.log(newPost)
+  }
+
+  // * Renders all posts
+  useEffect(()=>{
+    fetch(`/posts`)
+    .then(r=>r.json())
+    .then(setPosts)
+  }, [])
 
   const handleDeletePosts = (id) => {
     fetch(`/posts/${id}`,{
       method:"DELETE",
     })
-    setPost(null);
+    setPosts(null);
     // alert("Post deleted")
   }
-
-  // const [posts, setPosts] = useState([])
-
-  // const addNewPosts = newObj => {
-  //   fetch(`/posts`, {
-  //     method: 'POST', 
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify(newObj)
-  //   })
-  //   .then(r => r.json())
-  //   .then(data => {
-  //     setPosts([...posts, data])
-  //   })
-  // }
-
-  // useEffect(()=>{
-  //   fetch(`/posts`)
-  //   .then(r=>r.json())
-  //   .then(setPosts)
-  // }, [])
-
-  // console.log(posts)
 
   // * WEATHER
   const [weatherData, setWeatherData] = useState({});
@@ -99,7 +99,7 @@ function App() {
   useEffect(() => {
     getWeather();
   }, []);
-  console.log(weatherData)
+  // console.log(weatherData)
 
   return (
     <div className="App">
@@ -115,6 +115,7 @@ function App() {
             location={location} 
             weatherData={weatherData} 
             handleDeletePosts={handleDeletePosts}
+            posts={posts}
           />
         }
       />
@@ -127,6 +128,8 @@ function App() {
             user={user}  
             location={location} 
             handleDeletePosts={handleDeletePosts} 
+            posts={posts}
+            submitNewPost={submitNewPost}
           />
         } 
       />
@@ -139,6 +142,8 @@ function App() {
           weatherData={weatherData} 
           location={location} 
           handleDeleteAccount={handleDeleteAccount}
+          postContent={postContent}
+          setPostContent={setPostContent}
           />
         } 
       />
