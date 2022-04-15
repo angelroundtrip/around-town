@@ -2,7 +2,7 @@ import React, { useState, useEffect  } from 'react'
 import { Card, Icon, Button, Comment, Form } from 'semantic-ui-react'
 
 
-function PostCard({post, posts, user, handleDeletePosts, users, locations, weatherData}) {
+function PostCard({post, posts, user, handleDeletePosts, users, locations, weatherData, location}) {
 
   // * Post cards work, but need some work so that correct location info is displayed
   // const allLocations = locations.map(location => {return location.name})
@@ -11,7 +11,8 @@ function PostCard({post, posts, user, handleDeletePosts, users, locations, weath
   // console.log(post)
   // console.log(post ? post && post.post_content && post.user.home_location  : null)
 
-  console.log(user)
+//  console.log(post)
+//  console.log(post.user.home_location)
   
   
   return (

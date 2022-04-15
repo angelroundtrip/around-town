@@ -44,7 +44,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
    const [locationData, setLocationData] = useState([])
 
    useEffect(() => {
-     fetch('/users')
+     fetch('/posts')
        .then(response => response.json())
        .then(setLocationData)
    }, [])
@@ -53,11 +53,12 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
    const changeSearch = (e) => setSearch(e.target.value)
  
    const filteredSearch = locationData.filter(locationObj => {
-     const search1 = locationObj.home_location.toLowerCase()
+     const search1 = locationObj.user.home_location.toLowerCase()
      const search2 = search.toLowerCase()
      return search1.includes(search2)
    })
   //  console.log(filteredSearch)
+  //  console.log(posts) 
 
   return(
     <div>
@@ -76,9 +77,9 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
       <button type="submit"> Add Post </button>
    
       <PostList 
-        posts={posts} 
-        user={filteredSearch} 
-        location={location} 
+        posts={filteredSearch} 
+        user={user} 
+        // location={filteredSearch} 
         handleDeletePosts={handleDeletePosts} 
         weatherData={weatherData}
         // locationSearch={filteredSearch}

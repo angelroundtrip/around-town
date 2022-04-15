@@ -32,27 +32,23 @@ function App() {
   }
 
   // * Search function by location
-  const [locationData, setLocationData] = useState([])
-  // console.log(locationData)
+  // const [locationData, setLocationData] = useState([])
 
-  useEffect(()=>{
-    fetch('/users')
-      .then(r => {
-        if(r.ok){
-          r.json().then(setLocationData)
-        }
-      })
-  },[])
+  // useEffect(() => {
+  //   fetch('/users')
+  //     .then(response => response.json())
+  //     .then(setLocationData)
+  // }, [])
 
-  const [search, setSearch] = useState('')
-  const changeSearch = (e) => setSearch(e.target.value)
+  // const [search, setSearch] = useState('')
+  // const changeSearch = (e) => setSearch(e.target.value)
 
-  const filteredSearch = locationData.filter(locationObj => {
-    const search1 = locationObj.home_location.toLowerCase()
-    const search2 = search.toLowerCase()
-    return search1.includes(search2)
-  })
-  console.log(filteredSearch)
+  // const filteredSearch = locationData.filter(locationObj => {
+  //   const search1 = locationObj.home_location.toLowerCase()
+  //   const search2 = search.toLowerCase()
+  //   return search1.includes(search2)
+  // })
+  // console.log(filteredSearch)
 
   // * LOCATIONS
   const [location, setLocation] = useState([])
@@ -124,25 +120,6 @@ function App() {
   }, []);
   // console.log(weatherData)
 
-  // // * Search function by location
-  // const [locationData, setLocationData] = useState([])
-
-  // useEffect(() => {
-  //   fetch('locations')
-  //     .then(response => response.json())
-  //     .then(setLocationData)
-  // }, [])
-
-  // const [search, setSearch] = useState('')
-  // const changeSearch = (e) => setSearch(e.target.value)
-
-  // const filteredSearch = locationData.filter(locationObj => {
-  //   const search1 = locationObj.name.toLowerCase()
-  //   const search2 = search.toLowerCase()
-  //   return search1.includes(search2)
-  // })
-  // // console.log(filteredList)
-
   return (
     <div className="App">
 
@@ -172,6 +149,7 @@ function App() {
             handleDeletePosts={handleDeletePosts} 
             posts={posts}
             submitNewPost={submitNewPost}
+            // changeSearch={changeSearch}
           />
         } 
       />
