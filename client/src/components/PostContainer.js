@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PostForm from './PostForm'
 
-function PostContainer({user, location, weatherData, handleDeletePosts, posts, locationData}) {
+function PostContainer({user, location, weatherData, handleDeletePosts, posts}) {
 
   // console.log(weatherData)
   
@@ -10,16 +10,15 @@ function PostContainer({user, location, weatherData, handleDeletePosts, posts, l
       
       <p>PostContainer</p>
 
-      {/* <p>{user ? `Hello, ${user.username}! You're currently in ${user.home_location}! It's ${weatherData.currentTemperature} degrees °F`: null}</p> */}
+      <p>{user ? `Hello, ${user.username}! You're currently in ${user.home_location}! It's ${weatherData.currentTemperature} degrees °F`: null}</p>
 
-      {/* <div style={{color: 'navy'}} >______________________________________________</div> */}
+      <div style={{color: 'navy'}} >______________________________________________</div>
 
       <PostForm 
         user={user} 
         location={location} 
         handleDeletePosts={handleDeletePosts} 
         weatherData={weatherData}
-        locationData={locationData}
       />
       
     </menu>

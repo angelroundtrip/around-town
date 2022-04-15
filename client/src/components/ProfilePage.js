@@ -3,14 +3,17 @@ import { NavLink } from 'react-router-dom'
 import NavBar from './NavBar'
 import UserAccountUpdate from './UserAccountUpdate'
 
-
 function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
-  console.log(user)
+  // console.log(weatherData)
   
   return (
     <div>
 
       <NavBar />
+
+      {/* <h1>Around Town</h1> */}
+
+      {/* <div style={{borderBottom: '1px solid navy', marginTop: '1%'}}></div> */}
       
       <p>Hello, {user.first_name}! Here's your personal profile page, where you can update or delete your account</p>
 

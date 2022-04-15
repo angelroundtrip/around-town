@@ -31,7 +31,7 @@ function PostList({posts, user, handleDeletePosts, weatherData, location, filter
           key={postObj.id} 
           post={postObj} 
           user={user} 
-          // locationSearch={locationSearch} 
+          location={location} 
           handleDeletePosts={handleDeletePosts} 
           weatherData={weatherData} 
           users={users} 

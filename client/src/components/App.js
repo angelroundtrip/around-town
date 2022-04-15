@@ -12,7 +12,7 @@ function App() {
 
   // * USER ACCOUNTS
   const [user, setUser] = useState('')
-  console.log(user)
+  // console.log(user)
   
   useEffect(()=>{
     fetch('/me')
@@ -30,25 +30,6 @@ function App() {
     setUser(null);
     alert("User deleted")
   }
-
-  // * Search function by location
-  // const [locationData, setLocationData] = useState([])
-
-  // useEffect(() => {
-  //   fetch('/users')
-  //     .then(response => response.json())
-  //     .then(setLocationData)
-  // }, [])
-
-  // const [search, setSearch] = useState('')
-  // const changeSearch = (e) => setSearch(e.target.value)
-
-  // const filteredSearch = locationData.filter(locationObj => {
-  //   const search1 = locationObj.home_location.toLowerCase()
-  //   const search2 = search.toLowerCase()
-  //   return search1.includes(search2)
-  // })
-  // console.log(filteredSearch)
 
   // * LOCATIONS
   const [location, setLocation] = useState([])

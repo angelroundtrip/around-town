@@ -74,9 +74,9 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
         onChange={(e)=>setPostContent(e.target.value)} 
         type="text" 
         name="postContent" 
-        placeholder="What's on your mind?"
         value={postContent}
       />
+     
       <button type="submit"> Add Post </button>
    
       <PostList 

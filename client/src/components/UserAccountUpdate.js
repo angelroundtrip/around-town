@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 function UserAccountUpdate({user, setUser}) {
 
-  // console.log(user)
+  console.log(user)
 
   const [updateUsername, setUpdateUsername] =useState("")
   const [updateEmail, setUpdateEmail]= useState("")
@@ -76,9 +76,8 @@ function UserAccountUpdate({user, setUser}) {
   return (
     <div>
 
-      <p style={{marginTop: '20%'}}></p>
-      {/* <span style={{fontWeight: 'bold'}}> Update Account</span>  
-      <p></p> */}
+    <p style={{marginTop: '20%'}}></p>
+      {/* <span style={{fontWeight: 'bold'}}> UPDATE ACCOUNT </span> */}
 
       {error?error.map(e => <div>{e}</div>):null}
 

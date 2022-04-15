@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import NavBar from './NavBar';
+import Header from './NavBar';
 import PostContainer from './PostContainer';
 
 
 function Homepage({user, setUser, handleDeleteAccount, posts, weatherData, location, handleDeletePosts}) {
 
   return (
-    <div className='App'>
+    <div>
       
-      <NavBar 
+      <Header 
         user={user} 
         setUser={setUser} 
         handleDeleteAccount={handleDeleteAccount} 

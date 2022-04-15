@@ -1,21 +1,11 @@
-# puts "Deleting seed data..."
-# User.destroy_all
-# Location.destroy_all
-# Post.destroy_all
-# Faker::UniqueGenerator.clear
+User.create(username: "admin", password: "admin", email: "email@email.com", first_name: "admin", home_location: "New York, NY")
+User.create(username: "admin2", password: "admin2", email: "email2@email.com", first_name: "admin2", home_location: "Tokyo, Japan")
 
+Location.create(name: "New York, NY")
+Location.create(name: "Tokyo, Japan")
 
-Zero = User.create(username: "Zero", password: "admin", email: "email@email.com", first_name: "Angel", home_location: "New York, NY")
-Oni = User.create(username: "Oni", password: "admin2", email: "email2@email.com", first_name: Faker::Name.first_name, home_location: "Tokyo, Japan")
-# 25.times { 
-#   User.create(
-#     username: Faker::Games::Zelda.unique.character,
-#     password: Faker::Number.unique.number(digits: 5),
-#     email: Faker::Internet.unique.email,
-#     first_name: Faker::Name.unique.first_name,
-#     home_location: Faker::Address.zip,
-#   )
-#  }
+Post.create(user_id: 1, location_id: 1, post_content: "This is the first post!")
+Post.create(user_id: 2, location_id: 2, post_content: "This is the second post!")
 
 #  25.times { 
 #   User.create(
