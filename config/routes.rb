@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   post '/locations', to: 'locations#create'
 
   get '/weather', to: 'weather#userWeather'
-  
+
 end

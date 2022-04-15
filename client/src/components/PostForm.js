@@ -77,12 +77,11 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
       <button type="submit"> Add Post </button>
    
       <PostList 
+      // * currently breaks either search or posts (without manual refresh)
         posts={filteredSearch} 
         user={user} 
-        // location={filteredSearch} 
         handleDeletePosts={handleDeletePosts} 
         weatherData={weatherData}
-        // locationSearch={filteredSearch}
       />
 
       {/* <h1> NEW POST </h1> */}
