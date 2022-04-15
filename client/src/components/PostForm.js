@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PostList from './PostList'
 import { Input } from 'semantic-ui-react'
+import SearchBar from './SearchBar'
 
 
 function PostForm({user, location, handleDeletePosts, weatherData}) {
@@ -39,29 +40,52 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
     .then(setPosts)
   }, [])
 
+   // * Search function by location
+   const [locationData, setLocationData] = useState([])
+
+   useEffect(() => {
+     fetch('/users')
+       .then(response => response.json())
+       .then(setLocationData)
+   }, [])
+ 
+   const [search, setSearch] = useState('')
+   const changeSearch = (e) => setSearch(e.target.value)
+ 
+   const filteredSearch = locationData.filter(locationObj => {
+     const search1 = locationObj.home_location.toLowerCase()
+     const search2 = search.toLowerCase()
+     return search1.includes(search2)
+   })
+  //  console.log(filteredSearch)
+
   return(
     <div>
       <form onSubmit={submitNewPost}>
 
-      <PostList 
-        posts={posts} 
-        user={user} 
-        location={location} 
-        handleDeletePosts={handleDeletePosts} 
-        weatherData={weatherData}
-      />
-
-      <h1> NEW POST </h1>
+      <SearchBar changeSearch={changeSearch} />
+      <p></p>
 
       <Input 
         onChange={(e)=>setPostContent(e.target.value)} 
         type="text" 
         name="postContent" 
+        placeholder="What's on your mind?"
         value={postContent}
       />
-     
       <button type="submit"> Add Post </button>
-      
+   
+      <PostList 
+        posts={posts} 
+        user={filteredSearch} 
+        location={location} 
+        handleDeletePosts={handleDeletePosts} 
+        weatherData={weatherData}
+        // locationSearch={filteredSearch}
+      />
+
+      {/* <h1> NEW POST </h1> */}
+    
       </form>
     </div>
   )

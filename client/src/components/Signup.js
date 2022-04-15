@@ -106,7 +106,7 @@ function Signup() {
           type="text"
           id="home_location"
           value={homeLocation}
-          placeholder="eg: Tokyo, Japan"
+          placeholder="eg: New York, New York"
           onChange={(e) => setHomeLocation(e.target.value)}
         />
       

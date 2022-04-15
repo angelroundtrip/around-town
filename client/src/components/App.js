@@ -12,7 +12,7 @@ function App() {
 
   // * USER ACCOUNTS
   const [user, setUser] = useState('')
-  // console.log(user)
+  console.log(user)
   
   useEffect(()=>{
     fetch('/me')
@@ -30,6 +30,29 @@ function App() {
     setUser(null);
     alert("User deleted")
   }
+
+  // * Search function by location
+  const [locationData, setLocationData] = useState([])
+  // console.log(locationData)
+
+  useEffect(()=>{
+    fetch('/users')
+      .then(r => {
+        if(r.ok){
+          r.json().then(setLocationData)
+        }
+      })
+  },[])
+
+  const [search, setSearch] = useState('')
+  const changeSearch = (e) => setSearch(e.target.value)
+
+  const filteredSearch = locationData.filter(locationObj => {
+    const search1 = locationObj.home_location.toLowerCase()
+    const search2 = search.toLowerCase()
+    return search1.includes(search2)
+  })
+  console.log(filteredSearch)
 
   // * LOCATIONS
   const [location, setLocation] = useState([])
@@ -100,6 +123,25 @@ function App() {
     getWeather();
   }, []);
   // console.log(weatherData)
+
+  // // * Search function by location
+  // const [locationData, setLocationData] = useState([])
+
+  // useEffect(() => {
+  //   fetch('locations')
+  //     .then(response => response.json())
+  //     .then(setLocationData)
+  // }, [])
+
+  // const [search, setSearch] = useState('')
+  // const changeSearch = (e) => setSearch(e.target.value)
+
+  // const filteredSearch = locationData.filter(locationObj => {
+  //   const search1 = locationObj.name.toLowerCase()
+  //   const search2 = search.toLowerCase()
+  //   return search1.includes(search2)
+  // })
+  // // console.log(filteredList)
 
   return (
     <div className="App">

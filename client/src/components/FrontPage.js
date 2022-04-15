@@ -12,7 +12,7 @@ function FrontPage({user, setUser}) {
   // }
 
   return (
-    <header>
+    <div>
 
       <h1>Around Town</h1>
       <hr></hr>
@@ -34,7 +34,7 @@ function FrontPage({user, setUser}) {
 
       {/* <img src={seoul} alt='background'/> */}
 
-    </header>
+    </div>
   )
 }
 

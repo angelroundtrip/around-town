@@ -50,8 +50,10 @@ end
 gem "active_model_serializers", "~> 0.10.13"
 
 # API protection
-gem 'figaro'
+# gem 'figaro'
 
 gem "rest-client", "~> 2.1"
 
 gem "json", "~> 2.6"
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

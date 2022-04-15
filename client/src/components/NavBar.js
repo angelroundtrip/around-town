@@ -23,7 +23,9 @@ function NavBar({user, setUser, weatherData}) {
     
     <div>
 
-      <Header as='h1'>Around Town</Header>
+      <Header as='h1'>
+        <a href='/' className='link'>Around Town</a>
+      </Header>
 
       <div style={{float: 'right', marginRight: '1%'}}>
       <span className="nav"> {user ? user.username : <a className="nav"href='/' style={{textDecoration: 'none'}}> <span >Login</span> </a>}</span>

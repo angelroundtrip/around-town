@@ -34,7 +34,11 @@
   border-radius: 15px;
   margin: 15px;
   margin-top: 30px;
+  font-size: larger;
+  padding: 15px;
   outline: 2px solid peachpuff; 
+  /* background-color: sandybrown; */
+  /* color: white */
 }
 
 .card:hover {
@@ -74,5 +78,10 @@ input:hover{
 .nav{
   font-size: 25px;
   font-family: 'Roboto', sans-serif;
+  color: black;
+}
+
+.link{
+  text-decoration: none;
   color: black;
 }
