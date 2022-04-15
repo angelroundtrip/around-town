@@ -41,17 +41,17 @@ function Location() {
     <p></p>
     <form onSubmit={onSubmit}>
 
-    <label> Location: </label>
+    {/* <label> Location: </label> */}
       <input 
-        style={{ marginLeft:'20px'}} 
+        style={{ marginLeft:'20px', width:'50%' }} 
         type="text" 
         value={location} 
-        placeholder="eg: Lima, Peru"
+        placeholder="Post didn't register? Add a missing location HERE and try again!"
         onChange={(e) => handleLocation(e)}
       />
     
-    <p></p>
-    <button type="submit">Location</button>
+    {/* <p></p> */}
+    <button type="submit">Add New Location</button>
 
     </form>
       {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null}

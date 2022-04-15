@@ -30,7 +30,7 @@ function PostList({posts, user, handleDeletePosts, weatherData, location, filter
         <PostCard 
           key={postObj.id} 
           post={postObj} 
-          user={postObj} 
+          user={user} 
           // locationSearch={locationSearch} 
           handleDeletePosts={handleDeletePosts} 
           weatherData={weatherData} 

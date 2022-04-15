@@ -5,7 +5,6 @@ function PostContainer({user, location, weatherData, handleDeletePosts, posts, l
 
   // console.log(weatherData)
   
-
   return (
     <menu>
       

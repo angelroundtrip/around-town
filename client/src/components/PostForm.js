@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PostList from './PostList'
 import { Input } from 'semantic-ui-react'
 import SearchBar from './SearchBar'
+import Location from './SearchBar'
 
 
 function PostForm({user, location, handleDeletePosts, weatherData}) {
@@ -64,6 +65,8 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
     <div>
       <form onSubmit={submitNewPost}>
 
+      <Location />
+
       <SearchBar changeSearch={changeSearch} />
       <p></p>
 
@@ -77,9 +80,9 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
       <button type="submit"> Add Post </button>
    
       <PostList 
-        posts={filteredSearch} 
+        posts={posts} 
         user={user} 
-        // location={filteredSearch} 
+        filteredSearch={filteredSearch} 
         handleDeletePosts={handleDeletePosts} 
         weatherData={weatherData}
         // locationSearch={filteredSearch}

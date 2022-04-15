@@ -31,7 +31,7 @@ Oni = User.create(username: "Oni", password: "admin2", email: "email2@email.com"
 NY = Location.create(name: "New York, NY")
 Tokyo = Location.create(name: "Tokyo, Japan")
 Seoul = Location.create(name: "Seoul, South Korea")
-500.times { 
+1000.times { 
   Location.create(
     name: Faker::Address.zip,
   )
