@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import FrontPage from "./FrontPage";
 import Homepage from "./Homepage";
-import PostForm from "./PostForm";
+import PostForm from "./Post";
 import ProfilePage from "./ProfilePage";
 import Signup from "./Signup";
 
@@ -67,29 +67,29 @@ function App() {
   const [postContent, setPostContent] = useState("")
   const [posts, setPosts] = useState([])
   
-  const addNewPosts = newObj => {
-    fetch(`/posts`, {
-      method: 'POST', 
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(newObj)
-    })
-    .then(r => r.json())
-    .then(post => {
-      setPosts([post, ...posts])
-    })
-  }
+  // const addNewPosts = newObj => {
+  //   fetch(`/posts`, {
+  //     method: 'POST', 
+  //     headers: {'Content-Type': 'application/json'},
+  //     body: JSON.stringify(newObj)
+  //   })
+  //   .then(r => r.json())
+  //   .then(post => {
+  //     setPosts([post, ...posts])
+  //   })
+  // }
 
-  const submitNewPost = (e) => {
-    e.preventDefault()
-    const newPost = {
-      post_content: postContent,
-      user_id: user.id,
-      location_id: location.id
-    }
-    addNewPosts(newPost)
-    setPostContent("")
-    console.log(newPost)
-  }
+  // const submitNewPost = (e) => {
+  //   e.preventDefault()
+  //   const newPost = {
+  //     post_content: postContent,
+  //     user_id: user.id,
+  //     location_id: location.id
+  //   }
+  //   addNewPosts(newPost)
+  //   setPostContent("")
+  //   console.log(newPost)
+  // }
 
   // * Renders all posts
   useEffect(()=>{
@@ -148,7 +148,7 @@ function App() {
             location={location} 
             handleDeletePosts={handleDeletePosts} 
             posts={posts}
-            submitNewPost={submitNewPost}
+            // submitNewPost={submitNewPost}
             // changeSearch={changeSearch}
           />
         } 

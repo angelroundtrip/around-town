@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PostForm from './PostForm'
+import PostForm from './Post'
 
 function PostContainer({user, location, weatherData, handleDeletePosts, posts, locationData}) {
 

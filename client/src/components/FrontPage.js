@@ -26,7 +26,7 @@ function FrontPage({user, setUser}) {
       <a style={{textDecoration: 'none'}}href='home'> <button>TEMPORARY HOME PAGE BUTTON</button> </a>
       
       <p></p>
-      <>________________________________________________________________</>
+        <div style={{color: 'navy'}}>-------------------------------------------------------------------------------</div>
       <br></br>
     
       <p></p>

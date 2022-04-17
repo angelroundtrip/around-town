@@ -19,7 +19,8 @@ function Login() {
       },
       body: JSON.stringify({ username, password }),
     })
-    .then(res => res.json())
+    .then(res => 
+      res.json())
     .then(user => {
       // console.log(user)
       if (!user.errors)  { 

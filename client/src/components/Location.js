@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PostForm from './PostForm'
+import PostForm from './Post'
 // import { useNavigate } from 'react-router-dom';
 
 function Location() {

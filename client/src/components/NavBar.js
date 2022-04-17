@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Location from './Location';
-import PostForm from './PostForm';
+import PostForm from './Post';
 import UserAccountUpdate from './UserAccountUpdate';
 import { Header } from 'semantic-ui-react'
 
