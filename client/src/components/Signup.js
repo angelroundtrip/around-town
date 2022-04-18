@@ -115,7 +115,7 @@ function Signup() {
 
       <p></p>
       <NavLink to='/home'>
-      <button>TEMPORARY HOME PAGE BUTTON</button> 
+      <button>TEMPORARY HOME PAGE BUTTON (not working perfectly)</button> 
       </NavLink>
 
       </form>

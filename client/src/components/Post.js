@@ -4,42 +4,42 @@ import { Input } from 'semantic-ui-react'
 import SearchBar from './SearchBar'
 import NewPostForm from './NewPostForm'
 
-// 4 z
+
 function PostForm({user, location, handleDeletePosts, weatherData}) {
 
-  // const [postContent, setPostContent] = useState("")
+  const [postContent, setPostContent] = useState("")
   const [posts, setPosts] = useState([])
-  // // console.log(posts)
+  // console.log(posts)
   
-  // // const addNewPosts = newObj => {
-  // //   fetch(`/posts`, {
-  // //     method: 'POST', 
-  // //     headers: {'Content-Type': 'application/json'},
-  // //     body: JSON.stringify(newObj)
-  // //   })
-  // //   .then(r => r.json())
-  // //   .then(post => {setPosts([post, ...posts])
-  // //   })
-  // // }
+  const addNewPosts = newObj => {
+    fetch(`/posts`, {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newObj)
+    })
+    .then(r => r.json())
+    .then(post => {setPosts([post, ...posts])
+    })
+  }
 
-  // // const submitNewPost = (e) => {
-  // //   e.preventDefault()
-  // //   const newPost = {
-  // //     post_content: postContent,
-  // //     user_id: user.id,
-  // //     location_id: location.id
-  // //   }
-  // //   addNewPosts(newPost)
-  // //   setPostContent("")
-  // //   // console.log(newPost)
-  // // }
+  const submitNewPost = (e) => {
+    e.preventDefault()
+    const newPost = {
+      post_content: postContent,
+      user_id: user.id,
+      location_id: location.id
+    }
+    addNewPosts(newPost)
+    setPostContent("")
+    // console.log(newPost)
+  }
 
-  // // * Renders all posts
-  // useEffect(()=>{
-  //   fetch(`/posts`)
-  //   .then(r=>r.json())
-  //   .then(setPosts)
-  // }, [])
+  // * Renders all posts
+  useEffect(()=>{
+    fetch(`/posts`)
+    .then(r=>r.json())
+    .then(setPosts)
+  }, [])
 
    // * Search function by location
    const [locationData, setLocationData] = useState([])
@@ -97,14 +97,14 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
 //   )
 // }
     <div>
-      {/* <form onSubmit={submitNewPost}>  */}
+      <form onSubmit={submitNewPost}> 
 
       <SearchBar changeSearch={changeSearch} />
 
-      <NewPostForm  user={user} location={location} /> 
+      {/* <NewPostForm addPost={addPost} user={user} />  */}
 
       <p></p> 
-{/* 
+
       <Input 
         onChange={(e)=>setPostContent(e.target.value)} 
         type="text" 
@@ -112,12 +112,12 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
         placeholder="What's on your mind?"
         value={postContent}
       />
-      <button type="submit"> Add Post </button> */}
+      <button type="submit"> Add Post </button>
    
       <PostList 
       // * currently breaks either search or posts (without manual refresh)
-        // posts={posts} 
-        posts={filteredSearch}
+        posts={posts} 
+        // posts={filteredSearch}
         user={user} 
         handleDeletePosts={handleDeletePosts} 
         weatherData={weatherData}
@@ -126,7 +126,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
 
       {/* <h1> NEW POST </h1> */}
     
-      {/* </form> */}
+      </form>
     </div>
   )
 }

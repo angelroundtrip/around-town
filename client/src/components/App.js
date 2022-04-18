@@ -12,7 +12,7 @@ function App() {
 
   // * USER ACCOUNTS
   const [user, setUser] = useState('')
-  console.log(user)
+  // console.log(user)
   
   useEffect(()=>{
     fetch('/me')

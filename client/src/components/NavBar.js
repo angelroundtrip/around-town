@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import Location from './Location';
 import PostForm from './Post';
 import UserAccountUpdate from './UserAccountUpdate';
@@ -8,15 +8,17 @@ import { Header } from 'semantic-ui-react'
 
 function NavBar({user, setUser, weatherData}) {
 
+  const navigate = useNavigate();
+
   const handleLogout = () => {
-    fetch('/logout',{
-      method:'DELETE'
-    })
-    .then((r) => {
-      if (r.ok) {
-        setUser(null);
-      }
+    fetch('/logout',
+      {method: 'DELETE'})
+      .then((r) => {
+        if(r.ok){
+            setUser(null);
+        }
     });
+    navigate('/');
   }
   
   return (
@@ -32,7 +34,8 @@ function NavBar({user, setUser, weatherData}) {
 
       <a href='/account' style={{textDecoration: 'none', marginLeft:'20px', color:'black'}}><span>Profile</span></a>
     
-      <a href='/' style={{textDecoration: 'none', marginLeft:'20px', color:'black'}}><span onClick={handleLogout}>Logout</span></a>
+      <span style={{marginLeft:'20px'}} onClick={handleLogout}>Logout</span>
+
       </div>
      
       <div style={{marginRight:'75%', marginTop:'2%'}}>

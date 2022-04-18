@@ -7,7 +7,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState([])
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,18 +19,18 @@ function Login() {
       },
       body: JSON.stringify({ username, password }),
     })
-    .then(res => 
-      res.json())
+    .then(res => res.json())
     .then(user => {
-      // console.log(user)
+      console.log(user)
       if (!user.errors)  { 
-        alert("Login successful")
-      // navigate(`/posts`)
-        } else {
-          setError(Object.entries(user.errors))
-          alert("Incorrect login")
-      }
-    })  
+        alert("Login successful") 
+      }})
+      // navigate('/home')
+  //       } else {
+  //         setError(Object.entries(user.errors))
+  //         alert("Incorrect login")
+  //     }
+  //   })  
   }
   
   return (
