@@ -61,7 +61,8 @@ function Signup() {
       <form onSubmit={onSubmit}>
 
       {/* <label> Username: </label> */}
-        <input style={{width:'20%'}} 
+        <input 
+          style={{width:'20%'}} 
           type="text" 
           value={username} 
           placeholder="USERNAME"
@@ -70,7 +71,8 @@ function Signup() {
       
       <p></p>
       {/* <label> Password: </label> */}
-        <input style={{width:'20%'}} 
+        <input 
+          style={{width:'20%'}} 
           type="password" 
           value={password} 
           placeholder="PASSWORD"

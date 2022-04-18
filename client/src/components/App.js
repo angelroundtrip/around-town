@@ -6,6 +6,7 @@ import Homepage from "./Homepage";
 import Post from "./Post";
 import ProfilePage from "./ProfilePage";
 import Signup from "./Signup";
+import Login from "./Login";
 
 
 function App() {
