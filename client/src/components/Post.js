@@ -105,8 +105,9 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
 
       <p></p> 
 
-      <Input 
+      <input 
         onChange={(e)=>setPostContent(e.target.value)} 
+        style={{width: '80%'}}
         type="text" 
         name="postContent" 
         placeholder="What's on your mind?"

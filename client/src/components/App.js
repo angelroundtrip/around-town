@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import FrontPage from "./FrontPage";
 import Homepage from "./Homepage";
-import PostForm from "./Post";
+import Post from "./Post";
 import ProfilePage from "./ProfilePage";
 import Signup from "./Signup";
 
@@ -143,7 +143,7 @@ function App() {
 
       <Route path="/posts" 
         element={
-          <PostForm 
+          <Post 
             user={user}  
             location={location} 
             handleDeletePosts={handleDeletePosts} 

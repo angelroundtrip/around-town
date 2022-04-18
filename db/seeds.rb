@@ -54,13 +54,13 @@ Post.create(user_id: Seven.id, location_id: Chicago.id, post_content: "Spring is
 Post.create(user_id: Eight.id, location_id: NO.id, post_content: "Jazz Fest is soon! Best time of the year for me.")
 Post.create(user_id: Nine.id, location_id: TX.id, post_content: "The Grande Burger at Burger Number 5 was so good. I recommend it to everyone 🍔")
 Post.create(user_id: Ten.id, location_id: FL.id, post_content: "High temperatures forecast for the next few days, be careful out there everyone. Remember to hydrate.")
-# 35.times { 
-#   Post.create(
-#     user_id: User.pluck(:id).sample,
-#     location_id: Location.pluck(:id).sample,
-#     post_content: Faker::TvShows::Simpsons.quote,
-#   )
-#  }
+20.times { 
+  Post.create(
+    user_id: User.pluck(:id).sample,
+    location_id: Location.pluck(:id).sample,
+    post_content: Faker::Food.description,
+  )
+ }
 
 
 puts "Seeding complete!"

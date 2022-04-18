@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PostForm from './Post'
+import Post from './Post'
 
 function PostContainer({user, location, weatherData, handleDeletePosts, posts, locationData}) {
 
@@ -15,7 +15,7 @@ function PostContainer({user, location, weatherData, handleDeletePosts, posts, l
 
       {/* <div style={{color: 'navy'}} >______________________________________________</div> */}
 
-      <PostForm 
+      <Post 
         user={user} 
         location={location} 
         handleDeletePosts={handleDeletePosts} 
