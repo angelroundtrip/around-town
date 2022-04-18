@@ -2,6 +2,7 @@ import React, { useState, useEffect  } from 'react'
 import { Card, Icon, Button, Comment, Form } from 'semantic-ui-react'
 
 
+
 function PostCard({post, posts, user, handleDeletePosts, users, locations, weatherData, location, filteredSearch}) {
 
   // * Post cards work, but need some work so that correct location info is displayed
@@ -13,7 +14,7 @@ function PostCard({post, posts, user, handleDeletePosts, users, locations, weath
 
 //  console.log(post)
 //  console.log(post.user.home_location)
-// console.log(filteredSearch)
+console.log(filteredSearch)
   
   
   return (
@@ -29,6 +30,7 @@ function PostCard({post, posts, user, handleDeletePosts, users, locations, weath
           : null} 
       </Card> */}
         {/* <button style={{float: 'right'}} onClick={() => handleDeletePosts(post.id)}>Delete Post</button> */}
+      
       <Card>
         <Card.Content style={{fontSize: '30px'}}header={user ? `${post && post.post_content && post.user && post.user.username}` : null} />
 

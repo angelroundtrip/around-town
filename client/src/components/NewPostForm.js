@@ -1,33 +1,66 @@
-// import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Input } from 'semantic-ui-react'
+import PostList from './PostList'
 
-// // { addPostToState } IS A PROP PASSED DOWN FROM Post PAGE
-// function NewPostForm({ addPost }) {
-//   // WE NEED TO PASS STATE HERE, BECAUSE NAME, IMAGE, AND PRICE WILL BE UPDATED WHEN NEW Post FORM DATA IS ADDED BY USER
-//   const [postContent, setPostContent] = useState('')
+// POST IS WORKING together with search, but a refresh is required to see new post
+function NewPostForm({user, location }) {
+  const [postContent, setPostContent] = useState("")
+  const [posts, setPosts] = useState([])
+  
+  const addNewPosts = newObj => {
+    fetch(`/posts`, {
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newObj)
+    })
+    .then(r => r.json())
+    .then(data => {
+      setPosts([data, ...posts])
+    })
+  }
 
+  const submitNewPost = (e) => {
+    e.preventDefault()
+    const newPost = {
+      post_content: postContent,
+      user_id: user.id,
+      location_id: location.id
+    }
+    addNewPosts(newPost)
+    setPostContent("")
+    console.log(newPost)
+  }
 
-//   // THIS IS A FUNCTION
-//   const createPost = (e) => {
-//     e.preventDefault()
-//     // TELLS WHAT TO INCLUDE IN NEW Post CARD
-//     const newPost = { postContent }
-//     // ADDS NEW Post CARD TO STATE, WHICH UPDATES PAGE
-//     addPost( newPost )
-//   }
+  // * Renders all posts
+  useEffect(()=>{
+    fetch(`/posts`)
+    .then(r=>r.json())
+    .then(setPosts)
+  }, [])
 
-//   return (
-//     <div className="new-Post-form">
-//       <h2>New Post</h2>
-//       {/* ONSUBMIT IS NEEDED FOR FORMS */}
-//       <form onSubmit={createPost}>
-//         {/* ONCHANGE IS NEEDED TO CHANGE/UPDATE. THIS UPDATES THE NEW DATA FROM NEW Post FORM AND ADDS IT TO PAGE WHEN SUBMITTED */}
-//         <input onChange={(e) => setPostContent(e.target.value)} type="text" name="post" placeholder="Post name" />
+  return(
+    <div>
+      <form onSubmit={submitNewPost}>
+
+      {/* <PostList 
+        posts={posts} 
         
-//         <button type="submit">Add Post</button>
+      /> */}
 
-//       </form>
-//     </div>
-//   );
-// }
+      <h1> NEW POST </h1>
 
-// export default NewPostForm;
+      <input 
+        onChange={(e)=>setPostContent(e.target.value)} 
+        type="text" 
+        name="postContent" 
+        value={postContent}
+      />
+     
+      <button type="submit"> Add Post </button>
+      
+      </form>
+    </div>
+  )
+}
+
+export default NewPostForm;

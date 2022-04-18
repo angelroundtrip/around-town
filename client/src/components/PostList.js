@@ -37,7 +37,7 @@ function PostList({posts, user, handleDeletePosts, weatherData, location, filter
           locations={locations}
           // posts={posts}
           // location={location}
-          // filteredSearch={filteredSearch}
+          filteredSearch={filteredSearch}
         />
       )}
     </div>

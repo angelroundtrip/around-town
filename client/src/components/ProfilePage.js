@@ -10,9 +10,11 @@ function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
   return (
     <div>
 
-      <NavBar />
+      {/* <NavBar /> */}
+      <h1>Around Town</h1>
+      <hr></hr>
       
-      <p>Hello, {user.first_name}! Here's your personal profile page, where you can update or delete your account</p>
+      <p style={{fontSize:'24px'}}>Hello, {user.first_name}! Here's your personal profile page, where you can update or delete your account.</p>
 
       <UserAccountUpdate user={user} setUser={setUser}/>
 
@@ -28,7 +30,7 @@ function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
       </p>
 
       <a href='/home' style={{textDecoration: 'none'}}>
-        <button>TEMP Home Button</button>
+        <button>Return Home</button>
       </a>
 
     </div>
