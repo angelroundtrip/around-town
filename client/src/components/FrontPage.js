@@ -14,9 +14,9 @@ function FrontPage({user, setUser}) {
   return (
     <div>
 
-      <h1>Around Town</h1>
+      {/* <div style={{backgroundImage: `url(${seoul})`}}> */}
+      <h1 style={{fontFamily: 'fantasy'}}>Around Town</h1>
       <hr></hr>
-
       {/* {hasAccount ? (<h3>LOGIN</h3> <Login setUser={setUser}) /> : null} */}
 
       {/* <h3>LOGIN</h3> */}
@@ -26,14 +26,14 @@ function FrontPage({user, setUser}) {
       <a style={{textDecoration: 'none'}}href='home'> <button>TEMPORARY HOME PAGE BUTTON</button> </a>
       
       <p></p>
-        <div style={{color: 'navy'}}>-------------------------------------------------------------------------------</div>
+        <div style={{color: 'navy'}}>-------------------------------------------------------------------------------------------</div>
       <br></br>
     
       <p></p>
       <a href='signup'><button>Create new account</button></a>
 
-      {/* <img src={seoul} alt='background'/> */}
-
+      <h5 style={{marginTop:'300px', fontSize: '14px', fontWeight:'lighter'}}>Share events, facts, and other interesting information about your town.</h5>
+    {/* </div> */}
     </div>
   )
 }

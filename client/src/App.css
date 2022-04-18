@@ -32,8 +32,8 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 15px;
-  margin: 15px;
-  margin-top: 30px;
+  margin: 45px;
+  /* margin-top: 30px; */
   font-size: larger;
   padding: 15px;
   outline: 2px solid peachpuff; 
@@ -62,6 +62,7 @@ button:hover{
 }
 
 input{
+  background-color: rgb(250, 248, 246);
   text-align: center;
   border: 2px solid goldenrod;
   border-radius: 5px;
@@ -70,7 +71,7 @@ input{
 
 input:hover{
   text-align: center;
-  border: 2px solid blue;
+  border: 2px solid navy;
   border-radius: 5px;
   padding: 0.5%;
 }

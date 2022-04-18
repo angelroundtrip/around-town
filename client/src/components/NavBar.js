@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Location from './Location';
 import PostForm from './Post';
 import UserAccountUpdate from './UserAccountUpdate';
-import { Header } from 'semantic-ui-react'
+import { Header, Icon } from 'semantic-ui-react'
 
 
 function NavBar({user, setUser, weatherData}) {
@@ -26,7 +26,7 @@ function NavBar({user, setUser, weatherData}) {
     <div>
 
       <Header as='h1'>
-        <a href='/' className='link'>Around Town</a>
+        <a href='/' className='link' style={{fontFamily: 'fantasy'}}>Around Town</a>
       </Header>
 
       <div style={{float: 'right', marginRight: '1%'}}>

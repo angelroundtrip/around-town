@@ -97,20 +97,22 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
 //   )
 // }
     <div>
+
       <form onSubmit={submitNewPost}> 
 
-      <SearchBar changeSearch={changeSearch} />
+      {/* <SearchBar changeSearch={changeSearch} /> */}
 
       {/* <NewPostForm addPost={addPost} user={user} />  */}
 
       <p></p> 
 
+      
       <input 
         onChange={(e)=>setPostContent(e.target.value)} 
         style={{width: '80%'}}
         type="text" 
         name="postContent" 
-        placeholder="What's on your mind?"
+        placeholder="A cool event this weekend? Had a great meal at a restaurant? Traveling somewhere? Share what's happening around town!"
         value={postContent}
       />
       <button type="submit"> Add Post </button>

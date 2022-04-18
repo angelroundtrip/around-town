@@ -15,7 +15,7 @@ function Homepage({user, setUser, handleDeleteAccount, posts, weatherData, locat
         weatherData={weatherData}
       />
 
-      <h1>Homepage</h1>
+      {/* <h1>Homepage</h1> */}
 
       <PostContainer 
         user={user} 

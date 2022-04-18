@@ -2,19 +2,18 @@ import React, { useState, useEffect  } from 'react'
 import { Card, Icon, Button, Comment, Form } from 'semantic-ui-react'
 
 
-
 function PostCard({post, posts, user, handleDeletePosts, users, locations, weatherData, location, filteredSearch}) {
 
   // * Post cards work, but need some work so that correct location info is displayed
   // const allLocations = locations.map(location => {return location.name})
   // console.log(allLocations)
-  // console.log(weatherData)
   // console.log(post)
   // console.log(post ? post && post.post_content && post.user.home_location  : null)
 
 //  console.log(post)
 //  console.log(post.user.home_location)
-console.log(filteredSearch)
+// console.log(filteredSearch)
+// console.log(weatherData)
   
   
   return (
@@ -32,17 +31,19 @@ console.log(filteredSearch)
         {/* <button style={{float: 'right'}} onClick={() => handleDeletePosts(post.id)}>Delete Post</button> */}
       
       <Card>
-        <Card.Content style={{fontSize: '30px'}}header={user ? `${post && post.post_content && post.user && post.user.username}` : null} />
+        {/* <Card.Content style={{fontSize: '30px'}}header={user ? `${post && post.post_content && post.user && post.user.username}` : null} /> */}
+        <Card.Content style={{fontSize: '30px'}}header={user ? <div style={{color:'navy'}}>{post && post.post_content && post.user && post.user.username}</div> : null} />
 
         <hr></hr><p></p>
 
         <Card.Content description={post && post.post_content} />
       
         <p></p>
-        <div style={{color: 'peachpuff'}}>----------------------------------------------</div>
+        <div style={{color: 'peachpuff'}}>-----------------------------------------------------------------</div>
 
         <Card.Content extra>
-        <Icon name='user' />{post && post.post_content && post.user.home_location}
+        <Icon name='user' /><div style={{fontFamily: 'fantasy'}}>{post && post.post_content && post.user.home_location}</div>
+
         </Card.Content>
       </Card>
 

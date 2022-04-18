@@ -9,7 +9,7 @@ function PostContainer({user, location, weatherData, handleDeletePosts, posts, l
   return (
     <menu>
       
-      <p>PostContainer</p>
+      {/* <p>PostContainer</p> */}
 
       {/* <p>{user ? `Hello, ${user.username}! You're currently in ${user.home_location}! It's ${weatherData.currentTemperature} degrees °F`: null}</p> */}
 
