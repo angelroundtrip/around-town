@@ -55,63 +55,63 @@ function Signup() {
 
       <hr></hr>
 
-      <h4>Create Account</h4>
+      {/* <h4>Create Account</h4> */}
 
-      <p></p>
+      <p style={{marginTop:'10%'}}></p>
       <form onSubmit={onSubmit}>
 
-      <label> Username: </label>
-        <input style={{ marginLeft:'20px'}} 
+      {/* <label> Username: </label> */}
+        <input style={{width:'20%'}} 
           type="text" 
           value={username} 
-          placeholder="Enter username"
+          placeholder="USERNAME"
           onChange={(e) => handleUsername(e)} 
         />
       
       <p></p>
-      <label> Password: </label>
-        <input style={{ marginLeft:'20px'}} 
+      {/* <label> Password: </label> */}
+        <input style={{width:'20%'}} 
           type="password" 
           value={password} 
-          placeholder="Enter password"
+          placeholder="PASSWORD"
           onChange={(e) => handlePassword(e)} 
         />
       
       <p></p>
-      <label htmlFor="email">Email: </label>
+      {/* <label htmlFor="email">Email: </label> */}
         <input
-          style={{ marginLeft:'20px'}}
+          style={{width:'20%'}}
           type="text"
           id="email"
           value={email}
-          placeholder="Enter email"
+          placeholder="EMAIL"
           onChange={(e) => setEmail(e.target.value)}
         />
 
       <p></p>
-      <label htmlFor="first_name"> Name: </label>
+      {/* <label htmlFor="first_name"> Name: </label> */}
         <input
-          style={{ marginLeft:'20px'}}
+          style={{width:'20%'}}
           type="text"
           id="first_name"
           value={name}
-          placeholder="Enter name"
+          placeholder="NAME"
           onChange={(e) => setName(e.target.value)}
         />
 
       <p></p>
-      <label htmlFor="home_location"> Current Location: </label>
+      {/* <label htmlFor="home_location"> Current Location: </label> */}
         <input
-          style={{ marginLeft:'20px'}}
+          style={{width:'20%'}}
           type="text"
           id="home_location"
           value={homeLocation}
-          placeholder="eg: New York, New York"
+          placeholder="LOCATION | example: New York, New York"
           onChange={(e) => setHomeLocation(e.target.value)}
         />
       
       <p></p>
-      <button type="submit">Signup</button>
+      <button type="submit" style={{width: '10%'}}>Signup</button>
 
       <p></p>
       <NavLink to='/home'>

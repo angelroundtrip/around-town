@@ -30,7 +30,7 @@ function FrontPage({user, setUser}) {
       <br></br>
     
       <p></p>
-      <a href='signup'><button>Create new account</button></a>
+      <a href='signup' ><button style={{width:'10%'}}>Create new account</button></a>
 
       <h5 style={{marginTop:'300px', fontSize: '14px', fontWeight:'lighter'}}>Share events, facts, and other interesting information about your town.</h5>
     {/* </div> */}

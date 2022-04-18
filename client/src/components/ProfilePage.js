@@ -19,13 +19,13 @@ function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
       <UserAccountUpdate user={user} setUser={setUser}/>
   
       <a href='/home' style={{textDecoration: 'none'}}>
-        <button>Return Home</button>
+        <button style={{width:'10%', marginTop:'40px'}}>Return Home</button>
       </a>
 
-      <p>
+      <p >
         <NavLink to='/'>
           <button 
-            style={{marginTop:'2%', color: 'red'}} 
+            style={{marginTop:'2%', color: 'red', width:'10%'}} 
             onClick={handleDeleteAccount}
           > 
             Delete Account 

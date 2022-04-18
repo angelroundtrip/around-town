@@ -115,7 +115,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
         placeholder="A cool event this weekend? Had a great meal at a restaurant? Traveling somewhere? Share what's happening around town!"
         value={postContent}
       />
-      <button type="submit"> Add Post </button>
+      <button type="submit" style={{width: '10%'}}> Add Post </button>
    
       <PostList 
       // * currently breaks either search or posts (without manual refresh)

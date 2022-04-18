@@ -42,6 +42,7 @@ function Login() {
       <p></p>
         {/* <label htmlFor="username">Username:</label> */}
         <input className="input"
+          style={{width:'20%'}}
           type="text"
           id="username"
           value={username}
@@ -52,6 +53,7 @@ function Login() {
       <p></p>
         {/* <label htmlFor="password">Password:</label> */}
         <input
+          style={{width:'20%'}}
           type="password"
           id="password"
           value={password}
@@ -60,7 +62,7 @@ function Login() {
           />
 
       <p></p>
-        <button type="submit">Login</button>
+        <button style={{width:'10%'}} type="submit">Login</button>
   
       </form>
       {error?<div>{error}</div>:null}

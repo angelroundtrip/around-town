@@ -76,7 +76,7 @@ function UserAccountUpdate({user, setUser}) {
   return (
     <div>
 
-      <p style={{marginTop: '20%'}}></p>
+      <p style={{marginTop: '10%'}}></p>
       {/* <span style={{fontWeight: 'bold'}}> Update Account</span>  
       <p></p> */}
 
@@ -85,7 +85,9 @@ function UserAccountUpdate({user, setUser}) {
       <form onSubmit={handleSubmitUpdateForm} >
 
         {/* <label> Username: </label> */}
+        <p></p>
           <input 
+            style={{width:'10%'}}
             type="text" 
             value={updateUsername} 
             placeholder="UPDATE USERNAME"
@@ -93,7 +95,9 @@ function UserAccountUpdate({user, setUser}) {
           />
        
         {/* <label> Password: </label> */}
+          <p></p>
           <input 
+            style={{width:'10%'}}
             type="password" 
             value={updatePassword} 
             placeholder="UPDATE PASSWORD"
@@ -101,7 +105,9 @@ function UserAccountUpdate({user, setUser}) {
           />
 
         {/* <label> Email: </label> */}
+          <p></p>
           <input 
+            style={{width:'10%'}}
             type="text" 
             value={updateEmail} 
             placeholder="UPDATE EMAIL"
@@ -109,7 +115,9 @@ function UserAccountUpdate({user, setUser}) {
           />
 
         {/* <label> Name: </label>  */}
+          <p></p>
           <input 
+            style={{width:'10%'}}
             type="text" 
             value={updateName} 
             placeholder="UPDATE NAME"
@@ -118,16 +126,18 @@ function UserAccountUpdate({user, setUser}) {
        
 
         {/* <label> Current Location: </label>  */}
+          <p></p>
           <input 
-           type="text" 
-           value={updateHomeLocation} 
-           placeholder="UPDATE LOCATION"
+            style={{width:'10%'}}
+            type="text" 
+            value={updateHomeLocation} 
+            placeholder="UPDATE LOCATION"
           //  placeholder="eg: New York, New York"
-           onChange={handleHomeLocationChange} 
+            onChange={handleHomeLocationChange} 
           />
     
         <p></p>
-        <button type="submit"> Submit Changes </button>
+        <button type="submit" style={{width:'10%'}}> Submit Changes </button>
         <p></p>
 
       </form>
