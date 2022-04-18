@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import Location from './Location';
 import PostForm from './Post';
@@ -20,6 +20,19 @@ function NavBar({user, setUser, weatherData}) {
     });
     navigate('/');
   }
+
+  const [date, setDate] = useState(new Date())
+
+  useEffect(() => {
+    // let timer = setInterval(() =>setDate(new Date()), 1000)
+    let timer = (() =>setDate(new Date()), 1000)
+    return function cleanup(){
+      clearInterval(timer)
+      // clearInterval(timer)
+    }
+  },[])
+  // console.log(`Time: ${date.toLocaleTimeString()}`)
+  console.log(`Date: ${date.toLocaleDateString()}`)
   
   return (
     
@@ -30,7 +43,9 @@ function NavBar({user, setUser, weatherData}) {
       </Header>
 
       <div style={{float: 'right', marginRight: '1%'}}>
-      <span className="nav"> {user ? user.username : <a className="nav"href='/' style={{textDecoration: 'none'}}> <span >Login</span> </a>}</span>
+      <span className="nav" style={{color:'navy'}}> {user ? user.username : <a className="nav"href='/' style={{textDecoration: 'none'}}> <span >Login</span> </a>}</span>
+
+      <span style={{marginLeft:'20px'}}>{date.toLocaleDateString()}</span>
 
       <a href='/account' style={{textDecoration: 'none', marginLeft:'20px', color:'black'}}><span>Profile</span></a>
     
