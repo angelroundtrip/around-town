@@ -6,6 +6,7 @@ function Login() {
  
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
   const [error, setError] = useState([])
   const navigate = useNavigate();
 
@@ -24,13 +25,13 @@ function Login() {
       console.log(user)
       if (!user.errors)  { 
         alert("Login successful") 
-      }})
-      // navigate('/home')
-  //       } else {
-  //         setError(Object.entries(user.errors))
-  //         alert("Incorrect login")
-  //     }
-  //   })  
+        setUser(user)
+        // navigate('/home')
+        } else {
+          setError(Object.entries(user.errors))
+          alert("Incorrect login")
+      }
+    })  
   }
   
   return (

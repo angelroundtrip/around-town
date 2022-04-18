@@ -87,7 +87,7 @@ function UserAccountUpdate({user, setUser}) {
         {/* <label> Username: </label> */}
         <p></p>
           <input 
-            style={{width:'10%'}}
+            style={{width:'20%'}}
             type="text" 
             value={updateUsername} 
             placeholder="UPDATE USERNAME"
@@ -97,7 +97,7 @@ function UserAccountUpdate({user, setUser}) {
         {/* <label> Password: </label> */}
           <p></p>
           <input 
-            style={{width:'10%'}}
+            style={{width:'20%'}}
             type="password" 
             value={updatePassword} 
             placeholder="UPDATE PASSWORD"
@@ -107,7 +107,7 @@ function UserAccountUpdate({user, setUser}) {
         {/* <label> Email: </label> */}
           <p></p>
           <input 
-            style={{width:'10%'}}
+            style={{width:'20%'}}
             type="text" 
             value={updateEmail} 
             placeholder="UPDATE EMAIL"
@@ -117,7 +117,7 @@ function UserAccountUpdate({user, setUser}) {
         {/* <label> Name: </label>  */}
           <p></p>
           <input 
-            style={{width:'10%'}}
+            style={{width:'20%'}}
             type="text" 
             value={updateName} 
             placeholder="UPDATE NAME"
@@ -128,7 +128,7 @@ function UserAccountUpdate({user, setUser}) {
         {/* <label> Current Location: </label>  */}
           <p></p>
           <input 
-            style={{width:'10%'}}
+            style={{width:'20%'}}
             type="text" 
             value={updateHomeLocation} 
             placeholder="UPDATE LOCATION"
