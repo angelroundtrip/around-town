@@ -14,7 +14,6 @@ function Homepage({user, setUser, handleDeleteAccount, posts, weatherData, locat
         user ?  
           <>
           <NavBar 
-        
             user={user} 
             setUser={setUser} 
             handleDeleteAccount={handleDeleteAccount} 

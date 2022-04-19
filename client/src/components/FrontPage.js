@@ -26,7 +26,7 @@ function FrontPage({user, setUser}) {
       <a style={{textDecoration: 'none'}}href='home'> <button style={{width:'10%'}}>View Home</button> </a>
       
       <p></p>
-        <div style={{color: 'navy'}}>-------------------------------------------------------------------------------------------</div>
+        <div style={{color: 'navy'}}>--------------------------------------------------------------------------------------------------</div>
       <br></br>
     
       <p></p>

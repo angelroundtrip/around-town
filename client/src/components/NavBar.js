@@ -17,10 +17,13 @@ function NavBar({user, setUser, weatherData}) {
       {method: 'DELETE'})
       .then((r) => {
         if(r.ok){
-            setUser(null);
+          setUser(null);
+          // navigate('/');
         }
-    });
-    navigate('/');
+      })
+      .then(() => {
+        navigate('/')
+      });
   }
 
   const [date, setDate] = useState(new Date())
@@ -47,7 +50,7 @@ function NavBar({user, setUser, weatherData}) {
       <div style={{float: 'right', marginRight: '1%'}}>
       <span className="nav" style={{color:'navy'}}> {user ? user.username : <a className="nav"href='/' style={{textDecoration: 'none'}}>  </a>}</span>
 
-      <span style={{marginLeft:'20px', fontSize: '18px'}}>{date.toLocaleDateString()}</span>
+      <span style={{marginLeft:'20px', fontSize: '18px'}}>{date.toLocaleDateString()} </span> 
 
       <a href='/account' style={{textDecoration: 'none', marginLeft:'20px', color:'black', fontSize: '18px'}}><span>Profile</span></a>
     

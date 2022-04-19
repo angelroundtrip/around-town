@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    # debugger
     render json: @current_user
   end
 

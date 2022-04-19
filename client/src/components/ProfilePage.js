@@ -17,12 +17,14 @@ function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
       
       <p style={{fontSize:'24px'}}>Hello, {user.first_name}! Here's your personal profile page, where you can update or delete your account.</p>
 
+
       <UserAccountUpdate user={user} setUser={setUser}/>
   
       <a href='/home' style={{textDecoration: 'none'}}>
-        <button style={{width:'10%', marginTop:'40px'}}>Return Home</button>
+        <button style={{width:'10%'}}>Return Home</button>
       </a>
 
+      <p style={{fontSize:'20px', marginTop:'40px'}}>Get an error while trying to post a comment? Sorry about that... Add your location below and please try again.</p>
       <Location />
 
       <p >

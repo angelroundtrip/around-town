@@ -39,6 +39,7 @@ function Signup() {
         // console.log(user)
         if (!user.errors)  { 
           alert("Signup successful")
+          // setUser(user)
           // navigate(`/home`)
         } else {
         setErrors(Object.entries(user.errors))
@@ -49,7 +50,7 @@ function Signup() {
   return (
     <div> 
 
-      <a href='/' style={{textDecoration: 'none', color: 'black'}}>
+      <a href='/' style={{textDecoration: 'none', color: 'black', fontFamily: 'fantasy'}}>
         <h1>Around Town</h1>
       </a>
 
@@ -116,12 +117,13 @@ function Signup() {
       <button type="submit" style={{width: '10%'}}>Signup</button>
 
       <p></p>
-      <NavLink to='/home'>
-      <button>TEMPORARY HOME PAGE BUTTON (not working perfectly)</button> 
-      </NavLink>
 
       </form>
+      
+      <a style={{textDecoration: 'none'}}href='home'> <button style={{width:'10%'}}>View Home</button> </a>
       {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null}
+
+      <h5 style={{marginTop:'252px', fontSize: '14px', fontWeight:'lighter'}}>Share events, facts, and other interesting information about your town.</h5>
 
     </div>
   )

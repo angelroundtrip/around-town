@@ -27,7 +27,7 @@ function Login() {
       // navigate('/home')
         } else {
           setError(Object.entries(user.errors))
-          alert("Incorrect login")
+          // alert("Incorrect login")
       }
     })  
   }
