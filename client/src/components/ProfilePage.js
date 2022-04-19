@@ -6,13 +6,13 @@ import UserAccountUpdate from './UserAccountUpdate'
 
 
 function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
-  console.log(user)
+  // console.log(user)
   
   return (
     <div>
 
       {/* <NavBar /> */}
-      <h1 style={{fontFamily: 'fantasy'}}>Around Town</h1>
+      <h1 style={{fontFamily: 'fantasy', fontSize:'40px'}}>Around Town</h1>
       <hr></hr>
       
       <p style={{fontSize:'24px'}}>Hello, {user.first_name}! Here's your personal profile page, where you can update or delete your account.</p>

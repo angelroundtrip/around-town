@@ -60,7 +60,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
      const search2 = search.toLowerCase()
      return search1.includes(search2)
    })
-   console.log(filteredSearch)
+  //  console.log(filteredSearch)
   //  console.log(posts) 
 
   return(

@@ -15,7 +15,7 @@ function FrontPage({user, setUser}) {
     <div>
 
       {/* <div style={{backgroundImage: `url(${seoul})`}}> */}
-      <h1 style={{fontFamily: 'fantasy'}}>Around Town</h1>
+      <h1 style={{fontFamily: 'fantasy', fontSize:'40px'}}>Around Town</h1>
       <hr></hr>
       {/* {hasAccount ? (<h3>LOGIN</h3> <Login setUser={setUser}) /> : null} */}
 

@@ -55,7 +55,7 @@ function Signup() {
   return (
     <div> 
 
-      <a href='/' style={{textDecoration: 'none', color: 'black', fontFamily: 'fantasy'}}>
+      <a href='/' style={{textDecoration: 'none', color: 'black', fontFamily: 'fantasy', fontSize:'20px'}}>
         <h1>Around Town</h1>
       </a>
 
