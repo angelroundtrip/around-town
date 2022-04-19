@@ -42,10 +42,10 @@
 //     <div>
 //       <form onSubmit={submitNewPost}>
 
-//       {/* <PostList 
+//       <PostList 
 //         posts={posts} 
         
-//       /> */}
+//       />
 
 //       <h1> NEW POST </h1>
 

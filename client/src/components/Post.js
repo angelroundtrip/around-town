@@ -83,6 +83,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
   //   const lowerSearch = searchValue.toLowerCase()
   //   return lowerName.includes( lowerSearch )
   // }) 
+
   return(
 //     <div>
 //       {/* <form onSubmit={submitNewPost}> */}
@@ -124,7 +125,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
         user={user} 
         handleDeletePosts={handleDeletePosts} 
         weatherData={weatherData}
-        filteredSearch={filteredSearch}
+        // filteredSearch={filteredSearch}
       />
 
       {/* <h1> NEW POST </h1> */}

@@ -23,7 +23,7 @@ function FrontPage({user, setUser}) {
       <Login setUser={setUser} />
 
       <p></p>
-      <a style={{textDecoration: 'none'}}href='home'> <button>TEMPORARY HOME PAGE BUTTON</button> </a>
+      <a style={{textDecoration: 'none'}}href='home'> <button style={{width:'10%'}}>View Home</button> </a>
       
       <p></p>
         <div style={{color: 'navy'}}>-------------------------------------------------------------------------------------------</div>

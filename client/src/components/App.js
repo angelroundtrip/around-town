@@ -3,17 +3,16 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import FrontPage from "./FrontPage";
 import Homepage from "./Homepage";
-import Post from "./Post";
+import PostForm from "./Post";
 import ProfilePage from "./ProfilePage";
 import Signup from "./Signup";
-import Login from "./Login";
 
 
 function App() {
 
   // * USER ACCOUNTS
   const [user, setUser] = useState('')
-  // console.log(user)
+  console.log(user)
   
   useEffect(()=>{
     fetch('/me')
@@ -144,7 +143,7 @@ function App() {
 
       <Route path="/posts" 
         element={
-          <Post 
+          <PostForm 
             user={user}  
             location={location} 
             handleDeletePosts={handleDeletePosts} 

@@ -5,6 +5,7 @@ import PostContainer from './PostContainer';
 
 function Homepage({user, setUser, handleDeleteAccount, posts, weatherData, location, handleDeletePosts}) {
 
+ 
   return (
     <div className='App'>
       

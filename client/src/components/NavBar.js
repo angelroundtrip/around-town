@@ -7,6 +7,8 @@ import { Header, Icon } from 'semantic-ui-react'
 
 
 function NavBar({user, setUser, weatherData}) {
+  // console.log(user)
+ 
 
   const navigate = useNavigate();
 
@@ -32,7 +34,7 @@ function NavBar({user, setUser, weatherData}) {
     }
   },[])
   // console.log(`Time: ${date.toLocaleTimeString()}`)
-  console.log(`Date: ${date.toLocaleDateString()}`)
+  // console.log(`Date: ${date.toLocaleDateString()}`)
   
   return (
     
