@@ -6,7 +6,6 @@ function Login() {
  
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState("");
   const [error, setError] = useState([])
   const navigate = useNavigate();
 
@@ -25,8 +24,7 @@ function Login() {
       console.log(user)
       if (!user.errors)  { 
         alert("Login successful") 
-        setUser(user)
-        // navigate('/home')
+      // navigate('/home')
         } else {
           setError(Object.entries(user.errors))
           alert("Incorrect login")
@@ -42,7 +40,7 @@ function Login() {
 
       <p></p>
         {/* <label htmlFor="username">Username:</label> */}
-        <input 
+        <input className="input"
           style={{width:'20%'}}
           type="text"
           id="username"
@@ -63,7 +61,7 @@ function Login() {
           />
 
       <p></p>
-        <button type="submit" style={{width:'10%'}}>Login</button>
+        <button style={{width:'10%'}} type="submit">Login</button>
   
       </form>
       {error?<div>{error}</div>:null}

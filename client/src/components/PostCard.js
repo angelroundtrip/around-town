@@ -17,13 +17,13 @@ function PostCard({post, posts, user, handleDeletePosts, users, locations, weath
 
         <hr></hr><p></p>
 
-        <Card.Content description={post && post.post_content} />
+        <Card.Content style={{fontSize: '24px'}} description={post && post.post_content} />
       
         <p></p>
-        <div style={{color: 'peachpuff'}}>-----------------------------------------------------------------</div>
+        <div style={{color: 'peachpuff', fontSize: '24px'}}>-----------------------------------------------------------------</div>
 
         <Card.Content extra>
-        <Icon name='user' /><div style={{fontFamily: 'fantasy', color:'navy'}}>{post && post.post_content && post.user.home_location}</div>
+        <Icon name='user' /><div style={{fontFamily: 'fantasy', color:'navy', fontSize: '24px'}}>{post && post.post_content && post.user.home_location}</div>
 
         </Card.Content>
       </Card>

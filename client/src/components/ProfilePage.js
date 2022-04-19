@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Location from './Location'
 import NavBar from './NavBar'
 import UserAccountUpdate from './UserAccountUpdate'
 
@@ -21,6 +22,8 @@ function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
       <a href='/home' style={{textDecoration: 'none'}}>
         <button style={{width:'10%', marginTop:'40px'}}>Return Home</button>
       </a>
+
+      <Location />
 
       <p >
         <NavLink to='/'>

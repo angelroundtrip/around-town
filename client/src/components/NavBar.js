@@ -40,18 +40,18 @@ function NavBar({user, setUser, weatherData}) {
     
     <div>
 
-      <Header as='h1'>
+      <Header as='h3'>
         <a href='/' className='link' style={{fontFamily: 'fantasy'}}>Around Town</a>
       </Header>
 
       <div style={{float: 'right', marginRight: '1%'}}>
-      <span className="nav" style={{color:'navy'}}> {user ? user.username : <a className="nav"href='/' style={{textDecoration: 'none'}}> <span >Login</span> </a>}</span>
+      <span className="nav" style={{color:'navy'}}> {user ? user.username : <a className="nav"href='/' style={{textDecoration: 'none'}}>  </a>}</span>
 
-      <span style={{marginLeft:'20px'}}>{date.toLocaleDateString()}</span>
+      <span style={{marginLeft:'20px', fontSize: '18px'}}>{date.toLocaleDateString()}</span>
 
-      <a href='/account' style={{textDecoration: 'none', marginLeft:'20px', color:'black'}}><span>Profile</span></a>
+      <a href='/account' style={{textDecoration: 'none', marginLeft:'20px', color:'black', fontSize: '18px'}}><span>Profile</span></a>
     
-      <span style={{marginLeft:'20px'}} onClick={handleLogout}>Logout</span>
+      <span style={{marginLeft:'20px', fontSize: '18px'}} onClick={handleLogout}>Logout</span>
 
       </div>
      
