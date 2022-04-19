@@ -51,7 +51,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
        .then(setLocationData)
    }, [])
 
-   const addPost = (post) => setPosts([post, ...posts])
+  const addPost = (post) => setPosts([post, ...posts])
   const changeSearch = (e) => setSearch(e.target.value)
  
    const filteredSearch = locationData.filter(locationObj => {
@@ -103,7 +103,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
 
       {/* <SearchBar changeSearch={changeSearch} /> */}
 
-      {/* <NewPostForm addPost={addPost} user={user} />  */}
+      {/* <NewPostForm addPost={addPost} user={user} onSubmit={submitNewPost}/>  */}
 
       <p></p> 
 

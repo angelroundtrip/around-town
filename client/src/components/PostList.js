@@ -21,7 +21,7 @@ function PostList({posts, user, handleDeletePosts, weatherData, location, filter
   }, [])
   // console.log(locations)
 
-    // console.log(posts)
+    // console.log(filteredSearch)
 
   return (
     <div>

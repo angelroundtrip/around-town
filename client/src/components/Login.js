@@ -23,6 +23,8 @@ function Login() {
     .then(user => {
       console.log(user)
       if (!user.errors)  { 
+        setUsername('')
+        setPassword('')
         alert("Login successful") 
       // navigate('/home')
         } else {

@@ -3,7 +3,7 @@
 // import PostList from './PostList'
 
 // // POST IS WORKING together with search, but a refresh is required to see new post
-// function NewPostForm({user, location }) {
+// function NewPostForm({user, location, onSubmit }) {
 //   const [postContent, setPostContent] = useState("")
 //   const [posts, setPosts] = useState([])
   
@@ -40,7 +40,7 @@
 
 //   return(
 //     <div>
-//       <form onSubmit={submitNewPost}>
+//       <form onSubmit={onSubmit}>
 
 //       <PostList 
 //         posts={posts} 

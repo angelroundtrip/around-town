@@ -47,7 +47,7 @@ function NavBar({user, setUser, weatherData}) {
         <a href='/' className='link' style={{fontFamily: 'fantasy'}}>Around Town</a>
       </Header>
 
-      <div style={{float: 'right', marginRight: '1%'}}>
+      <div style={{float: 'right', marginRight: '5%'}}>
       <span className="nav" style={{color:'navy'}}> {user ? user.username : <a className="nav"href='/' style={{textDecoration: 'none'}}>  </a>}</span>
 
       <span style={{marginLeft:'20px', fontSize: '18px'}}>{date.toLocaleDateString()} </span> 

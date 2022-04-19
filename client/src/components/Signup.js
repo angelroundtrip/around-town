@@ -38,6 +38,11 @@ function Signup() {
       .then(user => {
         // console.log(user)
         if (!user.errors)  { 
+          setUsername('')
+          setPassword('')
+          setEmail('')
+          setName('')
+          setHomeLocation('')
           alert("Signup successful")
           // setUser(user)
           // navigate(`/home`)
