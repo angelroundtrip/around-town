@@ -1,6 +1,6 @@
 import React from "react";
 
-// * two ctrl z
+
 function SearchBar({changeSearch}) {
   
   return (

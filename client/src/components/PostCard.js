@@ -4,7 +4,7 @@ import { Card, Icon, Button, Comment, Form } from 'semantic-ui-react'
 
 function PostCard({post, posts, user, handleDeletePosts, users, locations, weatherData, location, filteredSearch}) {
 
-  // console.log(filteredSearch)
+  // console.log(post)
   
   return (
     <div>

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import PostCard from './PostCard'
 
 function PostList({posts, user, handleDeletePosts, weatherData, location, filteredSearch}) {
+  // console.log(posts)
 
   const [users, setUsers] = useState([])
   // * Renders all users

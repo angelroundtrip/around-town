@@ -53,36 +53,15 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
 
   const addPost = (post) => setPosts([post, ...posts])
   const changeSearch = (e) => setSearch(e.target.value)
+  
  
    const filteredSearch = locationData.filter(locationObj => {
      const search1 = locationObj.user.home_location.toLowerCase()
      const search2 = search.toLowerCase()
      return search1.includes(search2)
    })
-  //  console.log(filteredSearch)
+   console.log(filteredSearch)
   //  console.log(posts) 
-// * testing below, comment out above if something breaks
-  // const [posts, setPosts] = useState([])
-  // const [searchValue, setSearchValue] = useState('')
-
-  // // FETCHES Post OBJECT DATA
-  // useEffect(() => {
-  //   fetch(`/posts`)
-  //     .then( r => r.json() )
-  //     .then( setPosts )
-  // }, [])
-
-  // // ADDS NEW Post CARD TO THE TOP OF THE ARRAY (IN THE Post LIST)
-  // const addPostToState = (post) => setPosts( [post, ...posts] )
-  // // GRABS SEARCH INPUT IN THE SEARCH PostS FIELD
-  // const changeSearchValue = (e) => setSearchValue(e.target.value )
-  
-  // // FILTERS SEARCHED Post(S)
-  // const searchedPosts = posts.filter(postObj => {
-  //   const lowerName = postObj.post_content.toLowerCase()
-  //   const lowerSearch = searchValue.toLowerCase()
-  //   return lowerName.includes( lowerSearch )
-  // }) 
 
   return(
 //     <div>
