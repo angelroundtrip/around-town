@@ -31,7 +31,7 @@ function Homepage({user, setUser, handleDeleteAccount, posts, weatherData, locat
           : 
 
           <>
-          <h1 style={{fontFamily: 'fantasy', fontSize: '32px'}}>Around Town</h1>
+          <h1 style={{fontFamily: 'fantasy', fontSize: '40px'}}>Around Town</h1>
           <hr></hr>
           
           <a href='/' style={{textDecoration: 'none'}}>
