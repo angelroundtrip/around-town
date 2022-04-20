@@ -1,9 +1,8 @@
-import React, { useState, useEffect  } from 'react'
-import { Card, Icon, Button, Comment, Form } from 'semantic-ui-react'
+import React from 'react'
+import { Card, Icon } from 'semantic-ui-react'
 
 
 function PostCard({post, posts, user, handleDeletePosts, users, locations, weatherData, location, filteredSearch}) {
-
   // console.log(post)
   
   return (

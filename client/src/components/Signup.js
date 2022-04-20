@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
-import Location from './Location'
+import React, { useState } from 'react'
 // import { useNavigate } from 'react-router-dom';
 
 function Signup() {
@@ -27,7 +25,7 @@ function Signup() {
       first_name: name,
       home_location: homeLocation,
     }
-    console.log(newUser)
+    // console.log(newUser)
      
     fetch(`/signup`,{
       method:'POST',

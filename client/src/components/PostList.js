@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import PostCard from './PostCard'
 
+
 function PostList({posts, user, handleDeletePosts, weatherData, location, filteredSearch}) {
-  // console.log(posts)
 
   const [users, setUsers] = useState([])
   // * Renders all users
@@ -21,26 +21,23 @@ function PostList({posts, user, handleDeletePosts, weatherData, location, filter
     .then(setLocations)
   }, [])
   // console.log(locations)
-
-    // console.log(filteredSearch)
+  // console.log(filteredSearch)
 
   return (
     <div>
+
       {posts.map(postObj => 
         <PostCard 
           key={postObj.id} 
           post={postObj} 
           user={postObj} 
-          // locationSearch={locationSearch} 
           handleDeletePosts={handleDeletePosts} 
           weatherData={weatherData} 
           users={users} 
           locations={locations}
-          // posts={posts}
-          // location={location}
-          // filteredSearch={filteredSearch}
         />
       )}
+      
     </div>
   )
 }

@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 
-// * UPDATE WORKS, BUT GIVES ERRORS WHEN AT LEAST ONE FIELD IS NOT UPDATED OR IF EMAIL IS NOT UNIQUE
 
 function UserAccountUpdate({user, setUser}) {
-
-  // console.log(user)
 
   const [updateUsername, setUpdateUsername] =useState("")
   const [updateEmail, setUpdateEmail]= useState("")

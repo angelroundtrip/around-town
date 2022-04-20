@@ -1,17 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Location from './Location'
-import NavBar from './NavBar'
 import UserAccountUpdate from './UserAccountUpdate'
 
 
 function ProfilePage({user, weatherData, handleDeleteAccount, setUser}) {
-  // console.log(user)
   
   return (
     <div>
 
-      {/* <NavBar /> */}
       <h1 style={{fontFamily: 'fantasy', fontSize:'40px'}}>Around Town</h1>
       <hr></hr>
       

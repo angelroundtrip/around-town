@@ -1,19 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Post from './Post'
+
 
 function PostContainer({user, location, weatherData, handleDeletePosts, posts, locationData}) {
 
-  // console.log(weatherData)
-  
-
   return (
     <menu>
-      
-      {/* <p>PostContainer</p> */}
-
-      {/* <p>{user ? `Hello, ${user.username}! You're currently in ${user.home_location}! It's ${weatherData.currentTemperature} degrees °F`: null}</p> */}
-
-      {/* <div style={{color: 'navy'}} >______________________________________________</div> */}
 
       <Post 
         user={user} 

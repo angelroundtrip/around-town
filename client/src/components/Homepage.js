@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import NavBar from './NavBar';
 import PostContainer from './PostContainer';
 
 
-function Homepage({user, setUser, handleDeleteAccount, posts, weatherData, location, handleDeletePosts}) {
+function Homepage({user, setUser, handleDeleteAccount, weatherData, location, handleDeletePosts}) {
 
- 
   return (
     <div className='App'>
       
@@ -21,10 +20,10 @@ function Homepage({user, setUser, handleDeleteAccount, posts, weatherData, locat
           />
 
           <PostContainer 
-          user={user} 
-          location={location} 
-          weatherData={weatherData} 
-          handleDeletePosts={handleDeletePosts}
+            user={user} 
+            location={location} 
+            weatherData={weatherData} 
+            handleDeletePosts={handleDeletePosts}
           />
           </>
           

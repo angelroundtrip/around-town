@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import PostForm from './Post'
-// import { useNavigate } from 'react-router-dom';
+
 
 function Location() {
   
@@ -9,14 +8,12 @@ function Location() {
   
   const handleLocation = (e) => setLocation(e.target.value)
   
-  // const navigate = useNavigate();
-  
   function onSubmit(e){
     e.preventDefault()
     const newLocation = {
       name: location,
     }
-    console.log(newLocation)
+    // console.log(newLocation)
     
     fetch(`/locations`,{
       method:'POST',
@@ -27,8 +24,7 @@ function Location() {
     .then(location => {
       console.log(location)
       if (!location.errors)  { 
-        // alert("Signup successful")
-        // navigate(`/home`)
+        alert("New location added successfully")
       } else {
         setErrors(Object.entries(Location.errors))
       }

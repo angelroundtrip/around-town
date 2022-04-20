@@ -1,25 +1,15 @@
-import React, { useState } from 'react'
-import seoul from "../images/seoul.jpg";
+import React from 'react'
 import Login from './Login';
 
 
-function FrontPage({user, setUser}) {
-
-  // const [hasAccount, setHasAccount] = useState(true)
-
-  // const toggleAccount = () => {
-  //   setHasAccount(!hasAccount)
-  // }
+function FrontPage({setUser}) {
 
   return (
     <div>
 
-      {/* <div style={{backgroundImage: `url(${seoul})`}}> */}
       <h1 style={{fontFamily: 'fantasy', fontSize:'40px'}}>Around Town</h1>
       <hr></hr>
-      {/* {hasAccount ? (<h3>LOGIN</h3> <Login setUser={setUser}) /> : null} */}
-
-      {/* <h3>LOGIN</h3> */}
+     
       <Login setUser={setUser} />
 
       <p></p>
@@ -33,7 +23,7 @@ function FrontPage({user, setUser}) {
       <a href='signup' ><button style={{width:'10%'}}>Create new account</button></a>
 
       <h5 style={{marginTop:'300px', fontSize: '14px', fontWeight:'lighter'}}>Share events, facts, and other interesting information about your town.</h5>
-    {/* </div> */}
+
     </div>
   )
 }

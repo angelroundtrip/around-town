@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PostList from './PostList'
-import { Input } from 'semantic-ui-react'
 import SearchBar from './SearchBar'
-import NewPostForm from './NewPostForm'
+// import NewPostForm from './NewPostForm'
 
 
 function PostForm({user, location, handleDeletePosts, weatherData}) {
@@ -64,18 +63,6 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
   //  console.log(posts) 
 
   return(
-//     <div>
-//       {/* <form onSubmit={submitNewPost}> */}
-
-//       <SearchBar changeSearchValue={changeSearchValue} />
-
-//       <NewPostForm addPostToState={addPostToState} /> 
-    
-//       <PostList posts={searchedPosts} />
-//       {/* </form> */}
-//     </div>
-//   )
-// }
     <div>
 
       <form onSubmit={submitNewPost}> 
@@ -104,10 +91,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
         user={user} 
         handleDeletePosts={handleDeletePosts} 
         weatherData={weatherData}
-        // filteredSearch={filteredSearch}
       />
-
-      {/* <h1> NEW POST </h1> */}
     
       </form>
     </div>
