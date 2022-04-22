@@ -67,7 +67,7 @@ function PostForm({user, location, handleDeletePosts, weatherData}) {
 
       <form onSubmit={submitNewPost}> 
 
-      {/* <SearchBar changeSearch={changeSearch} /> */}
+      <SearchBar changeSearch={changeSearch} />
 
       {/* <NewPostForm addPost={addPost} user={user} onSubmit={submitNewPost}/>  */}
 

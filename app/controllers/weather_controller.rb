@@ -30,34 +30,34 @@ class WeatherController < ApplicationController
       }
   end
 
-  def postWeather
-    weatherAPI = "http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=#{@current_user.home_location}&aqi=no"
+#   def postWeather
+#     weatherAPI = "http://api.weatherapi.com/v1/current.json?key=26d8da2542354788820132449220804&q=#{@current_user.home_location}&aqi=no"
 
-    # bundle add rest-client
-    weather = RestClient.get(weatherAPI)
+#     # bundle add rest-client
+#     weather = RestClient.get(weatherAPI)
 
-    # bundle add json
-    weatherData = JSON.parse(weather)
+#     # bundle add json
+#     weatherData = JSON.parse(weather)
 
-    currentCity = weatherData["location"]["name"]
+#     currentCity = weatherData["location"]["name"]
 
-    currentState = weatherData["location"]["region"]
+#     currentState = weatherData["location"]["region"]
 
-    currentCountry = weatherData["location"]["country"]
+#     currentCountry = weatherData["location"]["country"]
 
-    currentTemperature = weatherData["current"]["temp_f"]
+#     currentTemperature = weatherData["current"]["temp_f"]
 
-    currentCondition = weatherData["current"]["condition"]["text"]
+#     currentCondition = weatherData["current"]["condition"]["text"]
 
-    # debugger
+#     # debugger
 
-    render json: {
-      currentCity: currentCity, 
-      currentState: currentState, 
-      currentCountry: currentCountry, 
-      currentTemperature: currentTemperature,
-      currentCondition: currentCondition 
-    }
-end
+#     render json: {
+#       currentCity: currentCity, 
+#       currentState: currentState, 
+#       currentCountry: currentCountry, 
+#       currentTemperature: currentTemperature,
+#       currentCondition: currentCondition 
+#     }
+# end
 
 end

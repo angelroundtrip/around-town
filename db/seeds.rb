@@ -15,15 +15,6 @@ Seven = User.create(username: "South Side", password: "admin", email: "email7@em
 Eight = User.create(username: "Po'boy", password: "admin", email: "email8@email.com", first_name: Faker::Name.unique.first_name, home_location: "New Orleans, Louisiana")
 Nine = User.create(username: "Big Tex", password: "admin", email: "email9@email.com", first_name: Faker::Name.unique.first_name, home_location: "Dallas, Texas")
 Ten = User.create(username: "Sunshine", password: "admin", email: "email10@email.com", first_name: Faker::Name.unique.first_name, home_location: "Miami, Florida")
-# 10.times { 
-#   User.create(
-#     username: Faker::Games::Zelda.character,
-#     password: Faker::Number.number(digits: 5),
-#     email: Faker::Internet.email,
-#     first_name: Faker::Name.first_name,
-#     home_location: Faker::Address.postcode,
-#   )
-#  }
 
 
 NY = Location.create(name: "New York, NY")
