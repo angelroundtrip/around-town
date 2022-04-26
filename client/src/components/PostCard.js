@@ -24,6 +24,8 @@ function PostCard({post, posts, user, handleDeletePosts, users, locations, weath
         <Card.Content extra>
         <Icon name='user' /><div style={{fontFamily: 'fantasy', color:'navy', fontSize: '24px'}}>{post && post.post_content && post.user.home_location}</div>
 
+        <button onClick={handleDeletePosts}>Delete Post</button>
+
         </Card.Content>
       </Card>
 

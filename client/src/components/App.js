@@ -55,11 +55,11 @@ function App() {
     .then(setPosts)
   }, [])
 
-  const handleDeletePosts = (id) => {
-    fetch(`/posts/${id}`,{
+  const handleDeletePosts = () => {
+    fetch(`/posts/62`,{
       method:"DELETE",
     })
-    setPosts(null);
+    // setPosts(null);
     // alert("Post deleted")
   }
 

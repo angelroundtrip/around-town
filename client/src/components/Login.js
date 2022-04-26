@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
@@ -7,7 +7,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState([])
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
 
   function handleSubmit(e) {
@@ -27,10 +27,11 @@ function Login() {
         setUsername('')
         setPassword('')
         alert("Login successful") 
+        
       // navigate('/home')
         } else {
           setError(Object.entries(user.errors))
-          // alert("Incorrect login")
+          alert("Incorrect login")
       }
     })  
   }
